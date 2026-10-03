@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+    --font-display: "Bricolage Grotesque", "Hanken Grotesk", sans-serif;
+    --font-body: "Hanken Grotesk", "Inter", sans-serif;
+
+    --color-ink: #0b1220;
+    --color-panel: #121a2c;
+    --color-panel-raised: #182238;
+    --color-line: #263050;
+    --color-paper: #f3f5f9;
+    --color-paper-dim: #b8c0d4;
+    --color-mute: #7e89a3;
+    --color-signal: #3e7bfa;
+    --color-wave: #38c6b9;
+}
+
+@layer base {
+    * {
+        border-color: var(--color-line);
+    }
+
+    html {
+        background: var(--color-ink);
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: var(--color-ink);
+        color: var(--color-paper);
+        font-family: var(--font-body);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+        background: var(--color-signal);
+        color: var(--color-ink);
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
