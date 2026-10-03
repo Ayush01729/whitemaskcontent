@@ -4,11 +4,23 @@ import { Reveal, Stagger, StaggerItem } from "../components/ui/reveal";
 import { Button } from "../components/ui/button";
 import { NicheMarquee } from "../components/niche-marquee";
 import { GuaranteeValue } from "../components/ui/guarantee-value";
+import { SEOHead, buildBreadcrumbSchema } from "../components/seo-head";
 import { DELIVERABLES, PLATFORMS, GUARANTEES, FEATURES } from "../lib/content";
+
+const BREADCRUMB = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "What You Get", path: "/what-you-get" },
+]);
 
 export function WhatYouGet() {
   return (
     <>
+      <SEOHead
+        title="What You Get — Faceless Video Production | White Mask Content"
+        description="Everything your faceless YouTube channel needs: niche-researched scripts, AI voiceover, full video editing, CTR-tested thumbnails, SEO metadata, and multi-platform posting. 16+ features on every plan."
+        path="/what-you-get"
+        schema={BREADCRUMB}
+      />
       <section className="px-6 pt-36 pb-16">
         <div className="mx-auto max-w-3xl">
           <Reveal>

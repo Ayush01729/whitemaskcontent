@@ -2,11 +2,23 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Reveal, Stagger, StaggerItem } from "../components/ui/reveal";
 import { Button } from "../components/ui/button";
+import { SEOHead, buildBreadcrumbSchema } from "../components/seo-head";
 import { RESULT_STATS, OUTPUT_SAMPLES } from "../lib/content";
+
+const BREADCRUMB = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Results", path: "/results" },
+]);
 
 export function Results() {
   return (
     <>
+      <SEOHead
+        title="Results & Case Studies — 12M+ Monthly Views | White Mask Content"
+        description="12M+ monthly views, 240+ channels in production, $850K+ in ad revenue kept by creators. See real results from White Mask Content's faceless AI video pipeline across 170+ niches."
+        path="/results"
+        schema={BREADCRUMB}
+      />
       <section className="px-6 pt-36 pb-16">
         <div className="mx-auto max-w-3xl">
           <Reveal>
@@ -72,7 +84,3 @@ export function Results() {
     </>
   );
 }
-
-
-
-

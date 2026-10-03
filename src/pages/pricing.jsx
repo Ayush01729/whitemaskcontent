@@ -1,11 +1,26 @@
 import { Reveal, Stagger } from "../components/ui/reveal";
 import { PricingCard } from "../components/pricing-card";
 import { GuaranteeValue } from "../components/ui/guarantee-value";
+import { SEOHead, buildFAQSchema, buildBreadcrumbSchema } from "../components/seo-head";
 import { PRICING_TIERS, GUARANTEES, FAQS } from "../lib/content";
+
+const PRICING_SCHEMA = [
+  buildFAQSchema(FAQS),
+  buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Pricing", path: "/pricing" },
+  ]),
+];
 
 export function Pricing() {
   return (
     <>
+      <SEOHead
+        title="Pricing — Faceless Video Plans from $54/mo | White Mask Content"
+        description="Faceless AI video plans from $54/mo. Every plan includes scripts, AI voiceover, editing, thumbnails, and SEO metadata. $0 setup, no contract, cancel anytime. Choose Starter, Creator, Growth, or Pro."
+        path="/pricing"
+        schema={PRICING_SCHEMA}
+      />
       <section className="px-6 pt-36 pb-16">
         <div className="mx-auto max-w-3xl">
           <Reveal>
@@ -82,6 +97,3 @@ export function Pricing() {
     </>
   );
 }
-
-
-

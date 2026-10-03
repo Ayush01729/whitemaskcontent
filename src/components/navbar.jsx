@@ -30,7 +30,7 @@ export function Navbar() {
           white mask content
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Main navigation" className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
             <NavLink
               key={link.to}

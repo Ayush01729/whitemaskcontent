@@ -19,14 +19,14 @@ export function Footer() {
           </div>
 
           <div className="flex gap-10">
-            <div className="flex flex-col gap-3">
+            <nav aria-label="Footer navigation" className="flex flex-col gap-3">
               <span className="text-sm text-paper-dim">Site</span>
               {NAV_LINKS.map((link) => (
                 <Link key={link.to} to={link.to} className="text-sm text-mute transition-colors hover:text-paper">
                   {link.label}
                 </Link>
               ))}
-            </div>
+            </nav>
             <div className="flex flex-col gap-3">
               <span className="text-sm text-paper-dim">Platforms</span>
               <span className="text-sm text-mute">YouTube</span>

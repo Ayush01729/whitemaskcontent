@@ -6,6 +6,7 @@ import { Home } from "./pages/home";
 import { WhatYouGet } from "./pages/what-you-get";
 import { Results } from "./pages/results";
 import { Pricing } from "./pages/pricing";
+import { NotFound } from "./pages/not-found";
 import { PlanModalProvider } from "./context/plan-modal-context";
 import { PlanModal } from "./components/plan-modal";
 
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="/what-you-get" element={<WhatYouGet />} />
             <Route path="/results" element={<Results />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

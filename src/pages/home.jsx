@@ -6,11 +6,23 @@ import { GuaranteeValue } from "../components/ui/guarantee-value";
 import { VideoGenerationVisual } from "../components/video-generation-visual";
 import { NicheMarquee } from "../components/niche-marquee";
 import { PricingCard } from "../components/pricing-card";
+import { SEOHead, buildServiceSchema, buildBreadcrumbSchema } from "../components/seo-head";
 import { DELIVERABLES, GUARANTEES, RESULT_STATS, PRICING_TIERS } from "../lib/content";
+
+const HOME_SCHEMA = [
+  buildServiceSchema(),
+  buildBreadcrumbSchema([{ name: "Home", path: "/" }]),
+];
 
 export function Home() {
   return (
     <>
+      <SEOHead
+        title="White Mask Content — Done-for-You Faceless AI Video Production"
+        description="White Mask Content turns one idea into a full faceless video pipeline: scripts, AI voiceover, editing, thumbnails, and posting for creators, startups, and YouTube channels. Plans from $54/mo."
+        path="/"
+        schema={HOME_SCHEMA}
+      />
       <section className="relative overflow-hidden px-6 pt-36 pb-20">
         <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2">
           <div>
@@ -106,7 +118,7 @@ export function Home() {
             </Reveal>
           </div>
           <Reveal delay={0.04}>
-            <p className="mt-3 max-w-lg text-mute">Real throughput from channels running on white mask content right now.</p>
+            <p className="mt-3 max-w-lg text-mute">Real throughput from channels running on White Mask Content right now.</p>
           </Reveal>
 
           <Stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -153,7 +165,3 @@ export function Home() {
     </>
   );
 }
-
-
-
-
