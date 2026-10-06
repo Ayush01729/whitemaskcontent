@@ -3,6 +3,7 @@ export const NAV_LINKS = [
   { label: "What You Get", to: "/what-you-get" },
   { label: "Results", to: "/results" },
   { label: "Pricing", to: "/pricing" },
+  { label: "Guides", to: "/resources" },
 ];
 
 export const DELIVERABLES = [
