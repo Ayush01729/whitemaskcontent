@@ -99,7 +99,7 @@ export const ORGANIZATION_SCHEMA = {
   url: SITE_URL,
   logo: `${SITE_URL}/favicon.svg`,
   description:
-    "Done-for-you faceless AI video production for creators, startups, and YouTube channels.",
+    "Autonomous AI video production services, kinetic UI screencasts, and high-converting product video ads for startups and brands.",
   sameAs: [],
 };
 
@@ -114,22 +114,22 @@ export function buildServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Faceless AI Video Production",
+    name: "AI Video Production Services",
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
       url: SITE_URL,
     },
     description:
-      "Done-for-you faceless video production: scripts, AI voiceover, editing, thumbnails, SEO metadata, and multi-platform posting.",
+      "Full-service AI video production for startups and brands: product analysis, kinetic UI animations, AI brand presenters, and multi-platform social exports.",
     areaServed: "Worldwide",
-    serviceType: "Video Production",
+    serviceType: "AI Video Production Services",
     offers: {
       "@type": "AggregateOffer",
-      lowPrice: "54",
+      lowPrice: "0",
       highPrice: "284",
       priceCurrency: "USD",
-      offerCount: "4",
+      offerCount: "5",
     },
   };
 }

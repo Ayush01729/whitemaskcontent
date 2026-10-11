@@ -14,25 +14,21 @@ export function Results() {
   return (
     <>
       <SEOHead
-        title="Results & Case Studies — 12M+ Monthly Views | White Mask Content"
-        description="12M+ monthly views, 240+ channels in production, $850K+ in ad revenue kept by creators. See real results from White Mask Content's faceless AI video pipeline across 170+ niches."
+        title="Results & Benchmarks — High-Converting Product Videos | White Mask Content"
+        description="Real production benchmarks from White Mask Content's AI video engine: 4.8x ROAS on paid campaigns, 82% retention on product demos, and scalable organic growth for startups and brands."
         path="/results"
         schema={BREADCRUMB}
       />
       <section className="px-6 pt-36 pb-16">
         <div className="mx-auto max-w-3xl">
-          <Reveal>
-            <span className="text-sm text-wave">Results</span>
-          </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-balance text-paper sm:text-5xl">
-              What a month of production actually looks like.
+            <h1 className="font-display text-4xl font-semibold leading-tight text-balance text-paper sm:text-5xl">
+              What video production does for product conversion.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-5 text-base leading-relaxed text-mute">
-              The throughput, the terms, and what four different niches, channels, and products get out of it
-              every month.
+              The throughput, the conversion impact, and what four different product categories achieve every month with zero filming time.
             </p>
           </Reveal>
         </div>
@@ -53,10 +49,10 @@ export function Results() {
       <section className="px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <h2 className="font-display text-2xl font-semibold text-paper">What production looks like, by niche or product.</h2>
+            <h2 className="font-display text-2xl font-semibold text-paper">Production outputs across business models.</h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mt-2 max-w-lg text-sm text-mute">Four niches, one product launch, the same pipeline underneath.</p>
+            <p className="mt-2 max-w-lg text-sm text-mute">Different product models, same conversion architecture.</p>
           </Reveal>
 
           <Stagger className="mt-10 grid gap-6 sm:grid-cols-2">

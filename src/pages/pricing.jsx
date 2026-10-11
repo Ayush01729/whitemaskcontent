@@ -16,32 +16,28 @@ export function Pricing() {
   return (
     <>
       <SEOHead
-        title="Pricing — Faceless Video Plans from $54/mo | White Mask Content"
-        description="Faceless AI video plans from $54/mo. Every plan includes scripts, AI voiceover, editing, thumbnails, and SEO metadata. $0 setup, no contract, cancel anytime. Choose Starter, Creator, Growth, or Pro."
+        title="Pricing — AI Video Production for Startups & Brands | White Mask Content"
+        description="Predictable AI video production from $54/mo for startups and brands. Includes high-converting scripts, UI motion graphics, hyper-realistic AI presenters, and multi-platform exports. Cancel anytime."
         path="/pricing"
         schema={PRICING_SCHEMA}
       />
       <section className="px-6 pt-36 pb-16">
         <div className="mx-auto max-w-3xl">
-          <Reveal>
-            <span className="text-sm text-wave">Pricing</span>
-          </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-balance text-paper sm:text-5xl">
-              Faceless video plans from $54/mo.
+            <h1 className="font-display text-4xl font-semibold leading-tight text-balance text-paper sm:text-5xl">
+              Transparent video production for high-growth brands.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-5 text-base leading-relaxed text-mute">
-              Every plan includes scripts, AI voiceover, editing, thumbnails, and SEO metadata. $0 setup, no
-              contract, cancel before renewal.
+              Every plan includes strategic scripting, kinetic UI animations, AI brand presenters, and multi-format exports. $0 setup fee, no long-term contracts, cancel anytime.
             </p>
           </Reveal>
         </div>
       </section>
 
       <section className="px-6 pb-20">
-        <Stagger className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Stagger className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {PRICING_TIERS.map((tier) => (
             <PricingCard key={tier.name} tier={tier} />
           ))}
@@ -65,12 +61,10 @@ export function Pricing() {
 
           <Reveal delay={0.1} className="mt-10 space-y-3 text-sm leading-relaxed text-mute">
             <p>
-              Every plan ships the same 16+ production features: script, voice, edit, thumbnails, SEO metadata,
-              and posting. Only the monthly volume changes between tiers.
+              Every plan ships complete production: positioning analysis, motion graphics, AI presenters, platform aspect ratios, and custom thumbnails. Only video volume varies across tiers.
             </p>
             <p>
-              No contract means no risk: test a niche for one month, keep going only if it's working. Upgrade,
-              downgrade, or cancel before your renewal date. Nothing locks you in.
+              No contract means zero risk: test high-performing videos for your product for one month, continue only if your acquisition metrics convert. Upgrade, downgrade, or cancel anytime with zero friction.
             </p>
           </Reveal>
         </div>

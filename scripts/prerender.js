@@ -9,36 +9,35 @@ const distDir = path.resolve(__dirname, "../dist");
 
 const SITE_URL = "https://www.whitemaskcontent.com";
 
-// Base static metadata for core routes
 const CORE_ROUTES = {
   "": {
-    title: "White Mask Content — Done-for-You Faceless AI Video Production",
+    title: "White Mask Content — AI Video Production Services & Product Video Ads",
     description:
-      "White Mask Content turns one idea into a full faceless video pipeline: scripts, AI voiceover, editing, thumbnails, and posting for creators, startups, and YouTube channels. Plans from $54/mo.",
+      "AI video production services for startups & brands. We turn your product link into high-converting AI UGC video ads and kinetic UI demos. Get 3 free videos — no card needed.",
     canonical: `${SITE_URL}/`,
   },
   pricing: {
-    title: "Pricing — Faceless Video Plans from $54/mo | White Mask Content",
+    title: "Pricing — AI Video Plans for Startups & Brands | White Mask Content",
     description:
-      "Flat monthly pricing for done-for-you faceless video production. Starter ($54), Creator ($86), Growth ($124), Pro ($284). $0 setup fee. Cancel anytime.",
+      "Predictable AI video production from $54/mo for startups and brands. Free 3 videos test offer, kinetic UI cuts, and AI presenters. $0 setup fee. Cancel anytime.",
     canonical: `${SITE_URL}/pricing`,
   },
   "what-you-get": {
-    title: "What You Get — 16+ Features Included | White Mask Content",
+    title: "What You Get — AI Product Videos for Startups & Brands | White Mask Content",
     description:
-      "Everything your faceless YouTube channel needs: niche-researched scripts, AI voiceover, video editing, CTR thumbnails, SEO metadata, and multi-platform posting.",
+      "Everything your product video marketing needs: conversion copywriting, kinetic UI animations, hyper-realistic AI presenters, and platform exports. Zero filming required.",
     canonical: `${SITE_URL}/what-you-get`,
   },
   results: {
-    title: "Results — 12M+ Monthly Views Across 170+ Niches | White Mask Content",
+    title: "Results & Benchmarks — High-Converting Product Videos | White Mask Content",
     description:
-      "Real production performance across 240+ client channels. $850K+ in ad revenue kept 100% by creators. Explore sample output and niche metrics.",
+      "Real production benchmarks from White Mask Content's AI video engine: 4.8x ROAS on paid campaigns, 82% retention on product demos, and scalable organic growth.",
     canonical: `${SITE_URL}/results`,
   },
   resources: {
-    title: "Faceless YouTube Guides & Video Automation Resources | White Mask Content",
+    title: "AI Video Guides & Product Growth Resources | White Mask Content",
     description:
-      "Explore in-depth guides on faceless YouTube channels, video automation pipelines, AI scripting & voiceovers, top RPM niches, and done-for-you channel growth.",
+      "Explore in-depth guides on AI video production, kinetic UI screencasts, AI UGC video ads, and high-retention video funnels for startups.",
     canonical: `${SITE_URL}/resources`,
   },
 };

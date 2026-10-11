@@ -16,25 +16,21 @@ export function WhatYouGet() {
   return (
     <>
       <SEOHead
-        title="What You Get — Faceless Video Production | White Mask Content"
-        description="Everything your faceless YouTube channel needs: niche-researched scripts, AI voiceover, full video editing, CTR-tested thumbnails, SEO metadata, and multi-platform posting. 16+ features on every plan."
+        title="What You Get — AI Product Videos for Startups & Brands | White Mask Content"
+        description="Everything your product video marketing needs: conversion copywriting, kinetic UI animations, hyper-realistic AI presenters, multi-ratio exports, and organic publishing. Zero filming required."
         path="/what-you-get"
         schema={BREADCRUMB}
       />
       <section className="px-6 pt-36 pb-16">
         <div className="mx-auto max-w-3xl">
-          <Reveal>
-            <span className="text-sm text-wave">What you get</span>
-          </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-balance text-paper sm:text-5xl">
-              Everything your channel needs. Nothing you have to do.
+            <h1 className="font-display text-4xl font-semibold leading-tight text-balance text-paper sm:text-5xl">
+              Everything your product videos need. Zero filming on your part.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-5 text-base leading-relaxed text-mute">
-              You pick the niche, or tell us about your product. We script it, voice it, edit it, caption it,
-              and post it if you want. None of it touches your calendar.
+              Drop your product link. We extract core features, write high-converting scripts, build kinetic UI graphics and AI brand presenters, and export for ads and organic reach. None of it touches your calendar.
             </p>
           </Reveal>
         </div>
@@ -95,7 +91,7 @@ export function WhatYouGet() {
       <section className="border-t border-line px-6 py-20">
         <div className="mx-auto max-w-4xl">
           <Reveal>
-            <h2 className="font-display text-2xl font-semibold text-paper">Across 170+ niches, with the same guarantees.</h2>
+            <h2 className="font-display text-2xl font-semibold text-paper">Across high-growth verticals, with the same guarantees.</h2>
           </Reveal>
           <Stagger className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
             {GUARANTEES.map((g) => (

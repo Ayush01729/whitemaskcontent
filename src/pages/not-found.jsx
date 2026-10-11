@@ -9,7 +9,7 @@ export function NotFound() {
     <>
       <SEOHead
         title="Page Not Found — White Mask Content"
-        description="The page you're looking for doesn't exist. Head back to explore faceless AI video production plans."
+        description="The page you're looking for doesn't exist. Head back to explore AI product video production plans."
         path="/404"
       />
       <section className="flex min-h-[60vh] items-center justify-center px-6 pt-36 pb-24">
