@@ -336,7 +336,7 @@ async function runPrerender() {
     console.log(`  ✓ Generated SEO Pillar Page: /${slug}`);
   }
 
-  console.log("✨ Prerendering complete! All 10 keywords and core routes have static 200 OK HTML files.");
+  console.log(`✨ Prerendering complete! All ${SEO_PAGE_KEYS.length} SEO pillar pages and core routes have static 200 OK HTML files.`);
 }
 
 runPrerender().catch((err) => {

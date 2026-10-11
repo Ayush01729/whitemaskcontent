@@ -18,6 +18,7 @@ import { Reveal, Stagger, StaggerItem } from "../components/ui/reveal";
 import { Button } from "../components/ui/button";
 import { SEOHead, buildFAQSchema, buildBreadcrumbSchema } from "../components/seo-head";
 import { usePlanModal } from "../context/plan-modal-context";
+import { useClaimFree } from "../context/claim-free-context";
 import { SEO_PAGES } from "../lib/seo-pages-data";
 import { GUARANTEES } from "../lib/content";
 import { GuaranteeValue } from "../components/ui/guarantee-value";
@@ -29,11 +30,36 @@ export function SEOPillarPage({ fixedSlug }) {
   const pageData = SEO_PAGES[slug];
 
   const { openPlanModal } = usePlanModal();
+  const { openClaimModal } = useClaimFree();
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   if (!pageData) {
     return <NotFound />;
   }
+
+  const handlePrimaryHeroCta = () => {
+    if (pageData.primaryCtaAction === "claim-free") {
+      openClaimModal("");
+    } else {
+      openPlanModal({ name: "Growth", price: 124 });
+    }
+  };
+
+  const handleCalloutCta = () => {
+    if (pageData.calloutCtaAction === "claim-free" || pageData.primaryCtaAction === "claim-free") {
+      openClaimModal("");
+    } else {
+      openPlanModal({ name: "Growth", price: 124 });
+    }
+  };
+
+  const handleFinalCta = () => {
+    if (pageData.finalCtaAction === "claim-free" || pageData.primaryCtaAction === "claim-free") {
+      openClaimModal("");
+    } else {
+      openPlanModal({ name: "Starter", price: 54 });
+    }
+  };
 
   const breadcrumbs = [
     { name: "Home", path: "/" },
@@ -116,13 +142,13 @@ export function SEOPillarPage({ fixedSlug }) {
           {/* CTAs */}
           <Reveal delay={0.2} className="mt-8 flex flex-wrap items-center gap-4">
             <Button
-              onClick={() => openPlanModal({ name: "Growth", price: 124 })}
+              onClick={handlePrimaryHeroCta}
               size="lg"
             >
-              Launch your channel <ArrowRight className="h-4 w-4" />
+              {pageData.primaryCtaText || "Launch your channel"} <ArrowRight className="h-4 w-4" />
             </Button>
             <Button as={Link} to="/pricing" variant="outline" size="lg">
-              View plans from $54/mo
+              {pageData.secondaryCtaText || "View plans from $54/mo"}
             </Button>
           </Reveal>
         </div>
@@ -279,19 +305,18 @@ export function SEOPillarPage({ fixedSlug }) {
                 White Mask Content Advantage
               </span>
               <h3 className="mt-2 font-display text-2xl font-semibold text-paper">
-                Ready to turn "{pageData.keyword}" into passive media income?
+                {pageData.calloutTitle || `Ready to turn "${pageData.keyword}" into passive media income?`}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-mute">
-                We handle the entire pipeline: scripts, custom AI narrator voices, full video editing, B-roll sourcing,
-                CTR thumbnails, and upload scheduling. You retain 100% of your channel and ad revenue.
+                {pageData.calloutSubtitle || "We handle the entire pipeline: scripts, custom AI narrator voices, full video editing, B-roll sourcing, CTR thumbnails, and upload scheduling. You retain 100% of your channel and ad revenue."}
               </p>
             </div>
             <div className="flex flex-col gap-3 shrink-0">
               <Button
-                onClick={() => openPlanModal({ name: "Growth", price: 124 })}
+                onClick={handleCalloutCta}
                 size="lg"
               >
-                Get Started <ArrowRight className="h-4 w-4" />
+                {pageData.calloutButtonText || "Get Started"} <ArrowRight className="h-4 w-4" />
               </Button>
               <span className="text-center text-[11px] text-mute">
                 Plans from $54/mo • Cancel anytime
@@ -378,7 +403,7 @@ export function SEOPillarPage({ fixedSlug }) {
                     Topic Cluster & Related Guides
                   </span>
                   <h2 className="mt-2 font-display text-xl font-semibold text-paper sm:text-2xl">
-                    Deepen your faceless YouTube knowledge
+                    {pageData.relatedHeading || "Deepen your video knowledge"}
                   </h2>
                 </div>
                 <Link
@@ -423,20 +448,20 @@ export function SEOPillarPage({ fixedSlug }) {
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
             <h2 className="font-display text-3xl font-semibold text-paper sm:text-4xl">
-              Start building your faceless video engine today.
+              {pageData.finalCtaTitle || "Start building your faceless video engine today."}
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
             <p className="mx-auto mt-4 max-w-lg text-base text-mute">
-              No contracts. $0 setup fee. Choose your plan and let our studio script, voice, edit, and publish for you.
+              {pageData.finalCtaSubtitle || "No contracts. $0 setup fee. Choose your plan and let our studio script, voice, edit, and publish for you."}
             </p>
           </Reveal>
           <Reveal delay={0.16} className="mt-8 flex flex-wrap justify-center gap-4">
             <Button
-              onClick={() => openPlanModal({ name: "Starter", price: 54 })}
+              onClick={handleFinalCta}
               size="lg"
             >
-              Start from $54/mo <ArrowRight className="h-4 w-4" />
+              {pageData.finalCtaButtonText || "Start from $54/mo"} <ArrowRight className="h-4 w-4" />
             </Button>
             <Button as={Link} to="/what-you-get" variant="ghost" size="lg">
               Explore all 16+ features

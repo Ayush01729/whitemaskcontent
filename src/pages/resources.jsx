@@ -13,9 +13,10 @@ const BREADCRUMB = buildBreadcrumbSchema([
 
 const CATEGORIES = [
   { label: "All Guides", value: "all" },
-  { label: "Channel Launch", value: "launch" },
-  { label: "AI & Video Editing", value: "ai" },
-  { label: "Systems & Automation", value: "automation" },
+  { label: "B2B SaaS & Ads", value: "saas" },
+  { label: "Brand UGC & E-Com", value: "ugc" },
+  { label: "AI Video & Editing", value: "ai" },
+  { label: "Channel Automation", value: "automation" },
 ];
 
 export function Resources() {
@@ -33,11 +34,16 @@ export function Resources() {
     if (!matchesSearch) return false;
 
     if (selectedCategory === "all") return true;
-    if (selectedCategory === "launch") {
+    if (selectedCategory === "saas") {
       return (
-        page.slug.includes("how-to-make") ||
-        page.slug.includes("channel") ||
-        page.slug === "faceless-youtube"
+        page.slug.includes("saas") ||
+        page.slug.includes("url")
+      );
+    }
+    if (selectedCategory === "ugc") {
+      return (
+        page.slug.includes("ugc") ||
+        page.slug.includes("brands")
       );
     }
     if (selectedCategory === "ai") {
@@ -51,7 +57,8 @@ export function Resources() {
       return (
         page.slug.includes("automation") ||
         page.slug.includes("done-for-you") ||
-        page.slug.includes("service")
+        page.slug.includes("service") ||
+        page.slug.includes("channel")
       );
     }
     return true;
@@ -60,8 +67,8 @@ export function Resources() {
   return (
     <>
       <SEOHead
-        title="Faceless YouTube Guides & Video Automation Resources | White Mask Content"
-        description="Explore in-depth guides on faceless YouTube channels, video automation pipelines, AI scripting & voiceovers, top RPM niches, and done-for-you channel growth."
+        title="AI Video Guides, SaaS Playbooks & Creative Resources | White Mask Content"
+        description="Explore in-depth playbooks on AI video production for SaaS, AI UGC ads for brands, URL-to-video automation, algorithm retention, and hands-off studio production."
         path="/resources"
         schema={BREADCRUMB}
       />
@@ -77,12 +84,12 @@ export function Resources() {
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-balance text-paper sm:text-5xl">
-              Faceless YouTube & Video Automation Guides
+              AI Video Production & Growth Playbooks
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-mute sm:text-lg">
-              Everything you need to master anonymous video production: algorithm retention rules, high-RPM niche selection, AI video tool stacks, and turnkey automation.
+              Everything you need to master modern video marketing: high-converting SaaS demos, AI UGC ad systems, URL-to-video pipelines, and retention psychology.
             </p>
           </Reveal>
 

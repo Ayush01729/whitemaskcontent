@@ -34,7 +34,27 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- 10 Targeted High-Value SEO Keyword Landing Pages -->
+  <!-- High-Intent AI Video & Brand Keyword Pillar Pages -->
+  <url>
+    <loc>https://www.whitemaskcontent.com/ai-video-production-for-saas</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.whitemaskcontent.com/ai-ugc-video-ads-for-brands</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.whitemaskcontent.com/turn-url-into-video-ads</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Targeted High-Value SEO Keyword Landing Pages -->
   <url>
     <loc>https://www.whitemaskcontent.com/faceless-youtube-channel</loc>
     <lastmod>2026-10-12</lastmod>

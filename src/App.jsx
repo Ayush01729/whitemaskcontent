@@ -40,7 +40,21 @@ function AppContent() {
           <Route path="/resources" element={<Resources />} />
           <Route path="/guides" element={<Resources />} />
 
-          {/* 10 Targeted SEO Keyword Landing Pages */}
+          {/* High-Intent AI Video Keyword Landing Pages */}
+          <Route
+            path="/ai-video-production-for-saas"
+            element={<SEOPillarPage fixedSlug="ai-video-production-for-saas" />}
+          />
+          <Route
+            path="/ai-ugc-video-ads-for-brands"
+            element={<SEOPillarPage fixedSlug="ai-ugc-video-ads-for-brands" />}
+          />
+          <Route
+            path="/turn-url-into-video-ads"
+            element={<SEOPillarPage fixedSlug="turn-url-into-video-ads" />}
+          />
+
+          {/* Targeted SEO Keyword Landing Pages */}
           <Route
             path="/faceless-youtube-channel"
             element={<SEOPillarPage fixedSlug="faceless-youtube-channel" />}
