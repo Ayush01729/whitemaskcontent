@@ -1,4 +1,35 @@
+# robots.txt for https://www.whitemaskcontent.com
+# Allowing traditional and generative AI search crawlers
+
 User-agent: *
+Allow: /
+
+# Explicit AI Search Engine Crawlers (GEO / AEO)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://www.whitemaskcontent.com/sitemap.xml
