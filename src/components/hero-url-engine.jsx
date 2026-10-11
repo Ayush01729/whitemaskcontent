@@ -17,6 +17,7 @@ const DEMO_PRESETS = [
         retentionScore: "96%",
         sound: "Moody Synth Bass (Trending)",
         captionPreview: "POV: Your engineering team stopped writing 40-page tickets and shipped 3 versions in 7 days.",
+        videoSrc: "/kinetic_ui_video_1.mp4",
       },
       {
         title: "The 3 shortcuts saving 4 hours a week",
@@ -26,6 +27,7 @@ const DEMO_PRESETS = [
         retentionScore: "98%",
         sound: "Upbeat Lo-Fi Crunch",
         captionPreview: "Hit Cmd+K, press C, assign in 0.2 seconds. Here is why high-growth startups refuse to use anything else.",
+        videoSrc: "/kinetic_video_2.mp4",
       },
       {
         title: "Why tech leads are replacing their PM stack",
@@ -35,6 +37,7 @@ const DEMO_PRESETS = [
         retentionScore: "91%",
         sound: "Curious Ambient",
         captionPreview: "If your developers spend more time updating sprint boards than writing code, you have a tooling problem.",
+        videoSrc: "/tech_founder.mp4",
       },
     ],
   },
@@ -51,6 +54,7 @@ const DEMO_PRESETS = [
         retentionScore: "97%",
         sound: "Fast Tech House",
         captionPreview: "Postgres, Auth, Edge Functions, and Vectors with one click. Firebase just lost the argument.",
+        videoSrc: "/kinetic_video_2.mp4",
       },
       {
         title: "Stop paying $4,000/mo for managed DBs",
@@ -60,6 +64,7 @@ const DEMO_PRESETS = [
         retentionScore: "93%",
         sound: "Dark Electronic Pulse",
         captionPreview: "We audited an AI startup paying AWS thousands for simple queries. Here is what happened after switching.",
+        videoSrc: "/tech_founder.mp4",
       },
       {
         title: "The Postgres trick 90% of devs miss",
@@ -69,6 +74,7 @@ const DEMO_PRESETS = [
         retentionScore: "95%",
         sound: "Deep Cinematic Bed",
         captionPreview: "Row level security without a custom middleware layer. Save this for your next weekend project.",
+        videoSrc: "/kinetic_ui_video_1.mp4",
       },
     ],
   },
@@ -85,6 +91,7 @@ const DEMO_PRESETS = [
         retentionScore: "97%",
         sound: "Hardstyle Motivational",
         captionPreview: "Squat proof, zero roll-down, and moisture-wicking that actually holds up through 500lb sets.",
+        videoSrc: "/dtc_brand_reviewer.mp4",
       },
       {
         title: "The fabric mistake ruining your workout",
@@ -94,6 +101,7 @@ const DEMO_PRESETS = [
         retentionScore: "92%",
         sound: "Heavy Bass Rhythm",
         captionPreview: "Cheap polyester traps odor forever. Here is what high-density seamless weave actually does.",
+        videoSrc: "/wellness_bottle_ad.mp4",
       },
       {
         title: "What 7 days in the new compression feels like",
@@ -103,6 +111,7 @@ const DEMO_PRESETS = [
         retentionScore: "94%",
         sound: "Trending Audio",
         captionPreview: "Unboxing the seamless drop. Honest review: the waistband support is literally unmatched.",
+        videoSrc: "/dtc_brand_reviewer.mp4",
       },
     ],
   },
@@ -359,133 +368,58 @@ export function HeroUrlEngine({ onClaim, onClaimFree }) {
               {/* Right Column: 9:16 Authentic High-Craft Video Scene */}
               <div className="flex justify-center lg:col-span-6">
                 <div className="relative aspect-[9/16] w-full max-w-[310px] sm:max-w-[330px] overflow-hidden rounded-[32px] border-2 border-white/15 bg-ink-deep shadow-2xl shadow-black">
-                  {/* Subtle ambient lighting */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-panel-raised/90 via-ink-deep/95 to-ink-deep" />
+                  {/* Real Background Video */}
+                  {currentHook.videoSrc && (
+                    <video
+                      key={`${activePreset.name}-${selectedHookIndex}`}
+                      src={currentHook.videoSrc}
+                      autoPlay={isPlaying}
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  )}
+
+                  {/* Subtle ambient lighting vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black/85 pointer-events-none" />
 
                   {/* Header Camera Status */}
                   <div className="absolute top-4 inset-x-4 z-20 flex items-center justify-between text-xs">
-                    <div className="flex items-center gap-1.5 rounded-full bg-black/60 px-2.5 py-1 backdrop-blur-md border border-white/10">
+                    <div className="flex items-center gap-1.5 rounded-full bg-black/70 px-2.5 py-1 backdrop-blur-md border border-white/10">
                       <span className="h-2 w-2 rounded-full bg-coral animate-pulse" />
                       <span className="font-mono text-xs uppercase tracking-wider text-paper">
                         REC • 4K 60FPS
                       </span>
                     </div>
 
-                    <div className="rounded-full bg-black/60 px-2.5 py-1 font-mono text-xs text-paper-dim backdrop-blur-md border border-white/10">
+                    <div className="rounded-full bg-black/70 px-2.5 py-1 font-mono text-xs text-paper-dim backdrop-blur-md border border-white/10">
                       {currentHook.style}
                     </div>
                   </div>
 
                   {/* ── REALISTIC PRODUCT UI SCENE ACCORDING TO ACTIVE PRESET ── */}
                   <div className="absolute inset-0 flex flex-col justify-between p-5 pt-16 pb-20">
-                    {/* Simulated Authentic Product Interface */}
-                    <div className="my-auto w-full">
-                      {activePreset.name === "Linear" ? (
-                        <div className="rounded-2xl border border-white/15 bg-ink/90 p-4 shadow-2xl backdrop-blur-md">
-                          {/* Mini Linear UI */}
-                          <div className="flex items-center justify-between border-b border-white/10 pb-2.5 text-xs text-mute">
-                            <div className="flex items-center gap-1.5">
-                              <span className="h-2 w-2 rounded-full bg-signal" />
-                              <span className="font-semibold text-paper">Linear Core</span>
-                            </div>
-                            <span className="rounded bg-white/10 px-1.5 py-0.5 text-xs font-mono text-paper-dim">
-                              Cmd+K
-                            </span>
-                          </div>
-
-                          <div className="mt-3 space-y-2">
-                            <div className="flex items-center justify-between rounded-lg bg-panel/60 p-2 text-xs">
-                              <div className="flex items-center gap-2">
-                                <span className="h-1.5 w-1.5 rounded-full bg-amber" />
-                                <span className="font-medium text-paper">LIN-402: Refactor auth flow</span>
-                              </div>
-                              <span className="text-xs text-mute font-mono">0.2s</span>
-                            </div>
-
-                            <div className="flex items-center justify-between rounded-lg bg-signal/15 border border-signal/30 p-2 text-xs">
-                              <div className="flex items-center gap-2">
-                                <span className="h-1.5 w-1.5 rounded-full bg-wave" />
-                                <span className="font-medium text-paper">Shipped 3 releases this sprint</span>
-                              </div>
-                              <span className="text-xs text-wave font-bold">Done</span>
-                            </div>
-                          </div>
-
-                          <div className="mt-3 flex items-center justify-between pt-2 border-t border-white/10 text-xs text-mute">
-                            <span>Ship velocity</span>
-                            <span className="font-bold text-wave">+340% YoY</span>
-                          </div>
+                    {/* Centered subtle floating badge */}
+                    <div className="my-auto w-full z-10">
+                      <div className="rounded-2xl border border-white/15 bg-black/75 p-3.5 shadow-2xl backdrop-blur-md text-center max-w-[260px] mx-auto">
+                        <div className="flex items-center justify-center gap-1.5 pb-1">
+                          <span className="h-2 w-2 rounded-full bg-signal" />
+                          <span className="font-semibold text-xs text-paper">{activePreset.name}</span>
+                          <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-mono text-paper-dim">
+                            {currentHook.format}
+                          </span>
                         </div>
-                      ) : activePreset.name === "Supabase" ? (
-                        <div className="rounded-2xl border border-white/15 bg-ink/90 p-4 shadow-2xl backdrop-blur-md">
-                          {/* Mini Supabase UI */}
-                          <div className="flex items-center justify-between border-b border-white/10 pb-2.5 text-xs text-mute">
-                            <div className="flex items-center gap-1.5">
-                              <Terminal className="h-3.5 w-3.5 text-wave" />
-                              <span className="font-semibold text-paper">SQL Console</span>
-                            </div>
-                            <span className="rounded bg-wave/15 px-1.5 py-0.5 text-xs font-mono text-wave">
-                              Active (12ms)
-                            </span>
-                          </div>
-
-                          <div className="mt-3 rounded-lg bg-black/60 p-2.5 font-mono text-xs text-paper-dim border border-white/5 space-y-1">
-                            <p className="text-wave">SELECT * FROM edge_clusters;</p>
-                            <p className="text-mute text-xs">Rows: 48,290 • Latency: 12ms</p>
-                            <p className="text-signal text-xs">Vector search: 100% indexed</p>
-                          </div>
-
-                          <div className="mt-3 flex items-center justify-between pt-2 border-t border-white/10 text-xs text-mute">
-                            <span>Cloud DB Costs</span>
-                            <span className="font-bold text-wave">Saved $4,200/mo</span>
-                          </div>
-                        </div>
-                      ) : activePreset.name === "Gymshark" ? (
-                        <div className="rounded-2xl border border-white/15 bg-ink/90 p-4 shadow-2xl backdrop-blur-md">
-                          {/* Mini Gymshark DTC Card */}
-                          <div className="flex items-center justify-between border-b border-white/10 pb-2.5 text-xs">
-                            <span className="font-bold text-paper">Apex Seamless Drop</span>
-                            <span className="rounded bg-coral/20 px-1.5 py-0.5 text-xs font-bold text-coral">
-                              High Demand
-                            </span>
-                          </div>
-
-                          <div className="mt-3 rounded-xl bg-panel/70 p-3 text-center border border-white/5">
-                            <p className="text-xs font-bold uppercase tracking-wider text-paper">
-                              High-Density Compression Weave
-                            </p>
-                            <div className="mt-2 flex items-center justify-center gap-1 text-amber">
-                              {"★★★★★".split("").map((s, i) => (
-                                <span key={i} className="text-xs">{s}</span>
-                              ))}
-                              <span className="ml-1 text-xs text-mute font-mono">(18.4K reviews)</span>
-                            </div>
-                          </div>
-
-                          <div className="mt-3 flex items-center justify-between pt-2 border-t border-white/10 text-xs text-mute">
-                            <span>Leg day stress test</span>
-                            <span className="font-bold text-wave">Zero Roll-Down</span>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="rounded-2xl border border-white/15 bg-ink/90 p-4 shadow-2xl backdrop-blur-md text-center">
-                          <p className="text-xs font-bold text-signal uppercase tracking-wider">
-                            {activePreset.url}
-                          </p>
-                          <p className="mt-2 font-display text-sm font-bold text-paper">
-                            {currentHook.title}
-                          </p>
-                          <div className="mt-3 flex items-center justify-center gap-2 text-xs text-mute">
-                            <span className="rounded bg-white/10 px-2 py-0.5">High Retaining Hook</span>
-                            <span className="font-bold text-wave">4.8x ROAS</span>
-                          </div>
-                        </div>
-                      )}
+                        <p className="mt-1 text-xs font-bold text-paper">
+                          "{currentHook.title}"
+                        </p>
+                      </div>
                     </div>
 
                     {/* Dynamic High-Impact Subtitles (CapCut / Reels style) */}
-                    <div className="text-center pt-2">
-                      <div className="inline-block rounded-xl bg-black/80 px-3.5 py-1.5 border border-white/10 shadow-xl backdrop-blur-md">
+                    <div className="text-center pt-2 z-10">
+                      <div className="inline-block rounded-xl bg-black/85 px-3.5 py-1.5 border border-white/15 shadow-xl backdrop-blur-md max-w-[280px]">
                         <p className="font-display text-xs sm:text-sm font-extrabold uppercase leading-snug tracking-wide text-amber drop-shadow">
                           {currentHook.captionPreview}
                         </p>

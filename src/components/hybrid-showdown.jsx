@@ -22,6 +22,7 @@ export function HybridShowdown({ onClaim }) {
       sampleSound: "Cyber Tech Bassline • 126 BPM",
       accent: "text-signal",
       bgGlow: "bg-signal/20",
+      videoSrc: "/kinetic_ui_video_1.mp4",
     },
     presenter: {
       title: "Hyper-Realistic AI Brand Presenters",
@@ -38,6 +39,7 @@ export function HybridShowdown({ onClaim }) {
       sampleSound: "Trending Ambient • 118 BPM",
       accent: "text-amber",
       bgGlow: "bg-amber/20",
+      videoSrc: "/tech_founder.mp4",
     },
   };
 
@@ -133,80 +135,47 @@ export function HybridShowdown({ onClaim }) {
 
           {/* Interactive Screen Preview Frame */}
           <div className="flex justify-center lg:col-span-5">
-            <div className="hairline-highlight relative aspect-[9/16] w-full max-w-[280px] overflow-hidden rounded-3xl border border-white/15 bg-ink-deep p-4 shadow-2xl flex flex-col justify-between">
-              <div className="flex items-center justify-between text-xs text-mute pb-2 border-b border-white/10">
-                <span className="font-mono uppercase tracking-wider text-xs">Output Feed</span>
-                <span className={`font-bold text-xs ${current.accent}`}>{activeTab.toUpperCase()}</span>
+            <div className="hairline-highlight relative aspect-[9/16] w-full max-w-[280px] overflow-hidden rounded-3xl border border-white/15 bg-ink-deep shadow-2xl flex flex-col justify-between">
+              {/* Background Video */}
+              <video
+                key={activeTab}
+                src={current.videoSrc}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+
+              {/* Gradient Vignette Overlay for readable HUD */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/85 pointer-events-none" />
+
+              {/* Top Header Status */}
+              <div className="relative z-10 flex items-center justify-between text-xs text-mute p-4 pb-2">
+                <span className="font-mono uppercase tracking-wider text-xs px-2.5 py-1 rounded-full bg-black/60 border border-white/10 backdrop-blur-md">Output Feed</span>
+                <span className={`font-bold text-xs px-2.5 py-1 rounded-full bg-black/60 border border-white/10 backdrop-blur-md ${current.accent}`}>{activeTab.toUpperCase()}</span>
               </div>
 
-              {/* Realistic Mock Window */}
-              <div className="my-auto w-full">
-                {activeTab === "kinetic" ? (
-                  <div className="rounded-2xl border border-white/15 bg-panel/90 p-3.5 shadow-xl backdrop-blur-md">
-                    <div className="flex items-center justify-between text-xs text-mute pb-2 border-b border-white/5">
-                      <div className="flex items-center gap-1.5">
-                        <span className="h-2 w-2 rounded-full bg-coral/80" />
-                        <span className="h-2 w-2 rounded-full bg-amber/80" />
-                        <span className="h-2 w-2 rounded-full bg-wave/80" />
-                      </div>
-                      <span className="font-mono text-xs text-paper-dim">app.demo.io</span>
-                    </div>
-
-                    <div className="mt-3 space-y-2">
-                      <div className="rounded-lg bg-black/50 p-2 text-xs">
-                        <span className="text-xs text-mute">Conversion Lift</span>
-                        <p className="font-display text-base font-bold text-wave">+248% Lift</p>
-                      </div>
-
-                      <div className="flex items-center justify-between rounded-lg bg-signal/15 border border-signal/30 p-2 text-xs">
-                        <span className="text-xs font-medium text-paper">Auto-sync active</span>
-                        <span className="h-2 w-2 rounded-full bg-signal animate-ping" />
-                      </div>
-                    </div>
-
-                    <p className="mt-3 text-xs font-bold text-paper text-center">
-                      "{current.sampleHook}"
-                    </p>
-                  </div>
-                ) : (
-                  <div className="rounded-2xl border border-white/15 bg-panel/90 p-3.5 shadow-xl backdrop-blur-md">
-                    {/* Studio Presenter Telemetry */}
-                    <div className="flex items-center justify-between text-xs text-mute pb-2 border-b border-white/5">
-                      <span className="flex items-center gap-1 text-wave font-bold text-xs">
-                        <Mic className="h-3 w-3" /> Voice Synced
-                      </span>
-                      <span className="font-mono text-xs text-paper-dim">5600K Key</span>
-                    </div>
-
-                    <div className="mt-3 rounded-xl bg-black/60 p-3 text-center border border-white/5">
-                      <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-amber/20 text-amber border border-amber/30">
-                        <UserCheck className="h-5 w-5" />
-                      </div>
-                      <p className="mt-2 text-xs font-bold text-paper">
-                        Brand Presenter • Natural Pacing
-                      </p>
-                      <p className="mt-1 text-xs text-mute">
-                        Sub-frame facial alignment (60fps)
-                      </p>
-                    </div>
-
-                    <div className="mt-3 flex items-center justify-center gap-1 h-3">
-                      {[30, 80, 50, 95, 60, 40, 85, 45].map((h, i) => (
-                        <span key={i} className="w-1 rounded-full bg-amber" style={{ height: `${h}%` }} />
-                      ))}
-                    </div>
-                  </div>
-                )}
+              {/* Center Subtle Telemetry Badge */}
+              <div className="relative z-10 px-4 my-auto">
+                <div className="inline-block rounded-xl bg-black/75 px-3 py-2 border border-white/15 backdrop-blur-md shadow-lg w-full text-center">
+                  <p className="text-xs font-bold text-paper">
+                    "{current.sampleHook}"
+                  </p>
+                </div>
               </div>
 
               {/* Bottom Guarantee */}
-              <div className="rounded-xl border border-white/10 bg-black/60 p-2.5 text-center">
-                <p className="text-xs font-bold uppercase tracking-wider text-wave">
-                  Zero Filming Required
-                </p>
-                <p className="text-xs text-paper-dim">
-                  Available in your 3 free sample cuts
-                </p>
+              <div className="relative z-10 p-4 pt-0">
+                <div className="rounded-xl border border-white/10 bg-black/75 p-2.5 text-center backdrop-blur-md">
+                  <p className="text-xs font-bold uppercase tracking-wider text-wave">
+                    Zero Filming Required
+                  </p>
+                  <p className="text-[11px] text-paper-dim">
+                    Available in your 3 free sample cuts
+                  </p>
+                </div>
               </div>
             </div>
           </div>

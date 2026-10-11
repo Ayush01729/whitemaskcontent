@@ -13,6 +13,7 @@ const RAIL_CARDS = [
     mockType: "devtools",
     mockData: { label: "LIN-840: Core Pipeline", metric: "+320% Velocity", tag: "Merged" },
     accent: "border-signal/30 text-signal",
+    videoSrc: "/kinetic_ui_video_1.mp4",
   },
   {
     title: "3 fabric secrets athletic wear brands will never tell you",
@@ -26,6 +27,7 @@ const RAIL_CARDS = [
     mockType: "ecommerce",
     mockData: { label: "High-Density Knit", metric: "4.9★ (14K Reviews)", tag: "Verified" },
     accent: "border-amber/30 text-amber",
+    videoSrc: "/dtc_brand_reviewer.mp4",
   },
   {
     title: "How one simple Postgres query dropped AWS bills by $4,000",
@@ -39,6 +41,7 @@ const RAIL_CARDS = [
     mockType: "database",
     mockData: { label: "SELECT * FROM edge_index", metric: "Latency 8ms", tag: "Query OK" },
     accent: "border-wave/30 text-wave",
+    videoSrc: "/kinetic_video_2.mp4",
   },
   {
     title: "Why tech founders stopped setting up camera ring lights",
@@ -52,6 +55,7 @@ const RAIL_CARDS = [
     mockType: "founder",
     mockData: { label: "Autonomous Pipeline", metric: "24h Revert", tag: "No Filming" },
     accent: "border-signal/30 text-signal",
+    videoSrc: "/tech_founder.mp4",
   },
   {
     title: "The 3 onboarding mistakes killing your app's trial retention",
@@ -65,6 +69,7 @@ const RAIL_CARDS = [
     mockType: "analytics",
     mockData: { label: "Day 3 Retention", metric: "84.2% Sustained", tag: "+42% Lift" },
     accent: "border-signal/30 text-signal",
+    videoSrc: "/iphone_16_finance_app.mp4",
   },
   {
     title: "We audited the trending recovery electrolyte formula for 14 days",
@@ -78,6 +83,7 @@ const RAIL_CARDS = [
     mockType: "supplement",
     mockData: { label: "Clean Electrolytes", metric: "1,000mg Sodium", tag: "Clinical" },
     accent: "border-coral/30 text-coral",
+    videoSrc: "/wellness_bottle_ad.mp4",
   },
 ];
 
@@ -131,31 +137,47 @@ export function KineticRails() {
 
 function RailItem({ item }) {
   return (
-    <div className="hairline-highlight relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/10 bg-panel/90 p-4 shadow-xl backdrop-blur-md flex flex-col justify-between">
+    <div className="hairline-highlight relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/90 p-4 shadow-xl flex flex-col justify-between">
+      {/* Background Video */}
+      {item.videoSrc && (
+        <video
+          src={item.videoSrc}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      )}
+
+      {/* Cinematic Gradient Vignette */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/25 to-black/85 pointer-events-none" />
+
       {/* Top Header */}
-      <div>
+      <div className="relative z-10">
         <div className="flex items-center justify-between text-xs">
-          <span className="rounded-full bg-black/60 px-2.5 py-0.5 font-semibold text-paper-dim border border-white/5 backdrop-blur-sm">
+          <span className="rounded-full bg-black/70 px-2.5 py-0.5 font-semibold text-paper-dim border border-white/10 backdrop-blur-md">
             {item.niche}
           </span>
-          <span className={`rounded-full bg-black/60 px-2 py-0.5 font-bold uppercase tracking-wider text-xs border ${item.accent} backdrop-blur-sm`}>
+          <span className={`rounded-full bg-black/70 px-2 py-0.5 font-bold uppercase tracking-wider text-xs border ${item.accent} backdrop-blur-md`}>
             {item.badge}
           </span>
         </div>
 
         {/* Creator identity */}
-        <div className="mt-2.5 flex items-center gap-1.5 text-xs text-mute">
+        <div className="mt-2 flex items-center gap-1.5 text-xs text-mute">
           <span className="h-1.5 w-1.5 rounded-full bg-wave animate-pulse" />
-          <span className="font-semibold text-paper">{item.handle}</span>
+          <span className="font-semibold text-paper drop-shadow">{item.handle}</span>
           <CheckCircle2 className="h-3 w-3 text-signal" />
         </div>
       </div>
 
-      {/* Middle: Simulated Product UI Screen Snippet */}
-      <div className="my-auto rounded-xl border border-white/10 bg-black/70 p-3 shadow-inner">
-        <div className="flex items-center justify-between text-xs text-mute pb-1.5 border-b border-white/5">
+      {/* Middle: Sleek floating metric badge */}
+      <div className="relative z-10 my-auto rounded-xl border border-white/15 bg-black/75 p-3 shadow-2xl backdrop-blur-md">
+        <div className="flex items-center justify-between text-xs text-mute pb-1.5 border-b border-white/10">
           <span className="font-mono text-paper-dim">{item.mockData.label}</span>
-          <span className="rounded bg-white/10 px-1 py-0.5 text-xs font-bold text-wave">
+          <span className="rounded bg-white/15 px-1 py-0.5 text-xs font-bold text-wave">
             {item.mockData.tag}
           </span>
         </div>
@@ -164,19 +186,19 @@ function RailItem({ item }) {
           <span className="font-display text-sm font-bold text-paper">
             {item.mockData.metric}
           </span>
-          <span className="rounded-full bg-signal/20 px-2 py-0.5 text-xs font-semibold text-signal">
+          <span className="rounded-full bg-signal/25 px-2 py-0.5 text-xs font-semibold text-signal border border-signal/30">
             {item.highlightWord}
           </span>
         </div>
 
-        <p className="mt-2 text-xs font-medium text-mute line-clamp-2 leading-relaxed">
+        <p className="mt-2 text-xs font-medium text-paper line-clamp-2 leading-relaxed">
           "{item.title}"
         </p>
       </div>
 
       {/* Bottom: Kinetic Captions & Telemetry */}
-      <div className="space-y-2 pt-1">
-        <div className="rounded-lg bg-black/80 px-2.5 py-1.5 border border-white/5">
+      <div className="relative z-10 space-y-2 pt-1">
+        <div className="rounded-lg bg-black/85 px-2.5 py-1.5 border border-white/10 backdrop-blur-md">
           <p className="line-clamp-2 text-xs font-bold text-amber">
             {item.caption}
           </p>
