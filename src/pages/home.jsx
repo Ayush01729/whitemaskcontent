@@ -95,7 +95,9 @@ export function Home() {
 
   const handleFinalSubmit = (e) => {
     e.preventDefault();
-    openClaimModal(finalUrl);
+    const raw = finalUrl.trim();
+    const clean = raw && !/^https?:\/\//i.test(raw) ? `https://${raw}` : raw;
+    openClaimModal(clean);
   };
 
   const toggleFaq = (idx) => {
@@ -402,11 +404,13 @@ export function Home() {
 
             <form onSubmit={handleFinalSubmit} className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row">
               <input
-                type="url"
+                type="text"
+                inputMode="url"
+                autoComplete="url"
                 required
                 value={finalUrl}
                 onChange={(e) => setFinalUrl(e.target.value)}
-                placeholder="https://yourbrand.com"
+                placeholder="yourbrand.com or https://..."
                 className="h-12 flex-1 rounded-xl border border-white/10 bg-ink-deep px-4 text-sm text-paper placeholder-mute/50 focus:border-signal focus:outline-none"
               />
               <Button type="submit" className="h-12 px-6 text-sm font-semibold whitespace-nowrap">

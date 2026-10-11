@@ -138,7 +138,8 @@ export function HeroUrlEngine({ onClaim, onClaimFree }) {
     if (e) e.preventDefault();
     const clean = inputUrl.trim();
     const targetUrl = clean || activePreset.url;
-    handleClaimTrigger(targetUrl);
+    const normalized = targetUrl && !/^https?:\/\//i.test(targetUrl) ? `https://${targetUrl}` : targetUrl;
+    handleClaimTrigger(normalized);
   };
 
   const currentHook = activePreset.hooks[selectedHookIndex] || activePreset.hooks[0];
