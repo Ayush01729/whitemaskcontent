@@ -107,8 +107,8 @@ export function Home() {
   return (
     <>
       <SEOHead
-        title="White Mask Content — AI Video Production Services & Product Video Ads"
-        description="We produce high-converting AI videos for your product with zero filming required. Drop your website link so we can study what you build — we revert in 24 hours with your first 3 videos free. No card needed."
+        title="AI Video Production Services for Startups & Brands | White Mask Content"
+        description="Turn your product into high-converting AI video ads and UI walkthroughs. Share your URL — get your first 3 custom videos free in 24h. No credit card required."
         path="/"
         schema={HOME_SCHEMA}
       />

@@ -11,25 +11,25 @@ const SITE_URL = "https://www.whitemaskcontent.com";
 
 const CORE_ROUTES = {
   "": {
-    title: "White Mask Content — AI Video Production Services & Product Video Ads",
+    title: "AI Video Production Services for Startups & Brands | White Mask Content",
     description:
-      "AI video production services for startups & brands. We turn your product link into high-converting AI UGC video ads and kinetic UI demos. Get 3 free videos — no card needed.",
+      "Turn your product into high-converting AI video ads and UI walkthroughs. Share your URL — get your first 3 custom videos free in 24h. No credit card required.",
     canonical: `${SITE_URL}/`,
   },
   pricing: {
-    title: "Pricing — AI Video Plans for Startups & Brands | White Mask Content",
+    title: "Pricing — AI Video Production Plans | White Mask Content",
     description:
       "Predictable AI video production from $54/mo for startups and brands. Free 3 videos test offer, kinetic UI cuts, and AI presenters. $0 setup fee. Cancel anytime.",
     canonical: `${SITE_URL}/pricing`,
   },
   "what-you-get": {
-    title: "What You Get — AI Product Videos for Startups & Brands | White Mask Content",
+    title: "What You Get — Studio-Grade AI Product Videos | White Mask Content",
     description:
       "Everything your product video marketing needs: conversion copywriting, kinetic UI animations, hyper-realistic AI presenters, and platform exports. Zero filming required.",
     canonical: `${SITE_URL}/what-you-get`,
   },
   results: {
-    title: "Results & Benchmarks — High-Converting Product Videos | White Mask Content",
+    title: "Results & Conversion Benchmarks — AI Video Ads | White Mask Content",
     description:
       "Real production benchmarks from White Mask Content's AI video engine: 4.8x ROAS on paid campaigns, 82% retention on product demos, and scalable organic growth.",
     canonical: `${SITE_URL}/results`,
@@ -41,6 +41,88 @@ const CORE_ROUTES = {
     canonical: `${SITE_URL}/resources`,
   },
 };
+
+function getCoreFallbackHtml(routeKey) {
+  if (routeKey === "") {
+    return `
+    <div id="root">
+      <main style="max-width:1120px;margin:0 auto;padding:48px 20px;font-family:system-ui,-apple-system,sans-serif;color:#f3f5f9;background:#0b1220;line-height:1.6;">
+        <header style="text-align:center;margin-bottom:48px;">
+          <p style="color:#3e7bfa;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;">AI Video Studio for Startups &amp; Brands • First 3 Videos Free</p>
+          <h1 style="font-size:42px;font-weight:800;line-height:1.15;margin:16px 0;">AI Video Production Services for Startups &amp; Brands</h1>
+          <p style="font-size:18px;color:#7e89a3;max-width:760px;margin:0 auto;">Turn your product link into high-converting AI short-form video ads, kinetic UI screencasts, and founder explainers. Drop your product URL — we study what you build and revert within 24 hours with your first 3 custom video concepts free. No credit card required.</p>
+        </header>
+
+        <section style="margin:48px 0;border-top:1px solid #1a253c;padding-top:36px;">
+          <h2 style="font-size:26px;margin-bottom:12px;">Autonomous URL-to-Video Production Engine</h2>
+          <p style="color:#b8c0d4;">White Mask Content analyzes your website or landing page URL to extract your positioning, value propositions, and customer objections. Our hybrid AI studio crafts tailored 9:16 vertical ads tuned for TikTok, Meta Reels, and YouTube Shorts.</p>
+          <ul style="margin-top:16px;color:#b8c0d4;">
+            <li style="margin-bottom:8px;">• <strong>Kinetic UI Demos:</strong> High-energy speed-runs of your software interface, highlighting core workflows.</li>
+            <li style="margin-bottom:8px;">• <strong>AI Brand Presenters:</strong> Studio-grade AI actors and presenters delivering natural product reviews.</li>
+            <li style="margin-bottom:8px;">• <strong>Zero Filming Overhead:</strong> No cameras, microphones, or lighting setups required from your team.</li>
+            <li style="margin-bottom:8px;">• <strong>First 3 Videos Free:</strong> Receive 3 complete video concepts within 24 hours with zero credit card required.</li>
+          </ul>
+        </section>
+
+        <section style="margin:48px 0;border-top:1px solid #1a253c;padding-top:36px;">
+          <h2 style="font-size:26px;margin-bottom:16px;">AI Video Production Packages &amp; Free Trial</h2>
+          <p style="color:#b8c0d4;">Explore flexible monthly video creative packages starting from $0 with 100% commercial ownership rights on all raw video files.</p>
+          <ul style="margin-top:12px;color:#b8c0d4;">
+            <li style="margin-bottom:8px;">• <strong>Free 3 Videos ($0):</strong> 3 custom reels (45-60s each), product angle research, delivered in 24h. No credit card required.</li>
+            <li style="margin-bottom:8px;">• <strong>Starter ($54/mo):</strong> 26 vertical video ads + 2 long-form walkthroughs per month.</li>
+            <li style="margin-bottom:8px;">• <strong>Creator ($86/mo):</strong> 28 vertical video ads + 4 long-form walkthroughs per month.</li>
+            <li style="margin-bottom:8px;">• <strong>Growth ($124/mo):</strong> 30 vertical video ads + 6 long-form walkthroughs per month.</li>
+            <li style="margin-bottom:8px;">• <strong>Pro ($284/mo):</strong> Daily-upload cadence across TikTok, Reels, and Shorts.</li>
+          </ul>
+        </section>
+
+        <section style="margin:48px 0;border-top:1px solid #1a253c;padding-top:36px;">
+          <h2 style="font-size:26px;margin-bottom:20px;">Frequently Asked Questions</h2>
+          <div style="margin-bottom:24px;">
+            <h3 style="font-size:18px;margin-bottom:6px;">How does White Mask Content create AI video ads from a product URL?</h3>
+            <p style="color:#b8c0d4;">White Mask Content analyzes your website or landing page URL to extract your product positioning, customer pain points, and visual design tokens. Our hybrid pipeline combines advanced generative AI video models with human creative direction to deliver 3 custom video concepts within 24 hours with no credit card required.</p>
+          </div>
+          <div style="margin-bottom:24px;">
+            <h3 style="font-size:18px;margin-bottom:6px;">How does the 'First 3 Videos Free' process work?</h3>
+            <p style="color:#b8c0d4;">Paste your website link and email. Our team reviews your product positioning and reverts within 24 hours with your tailored 3-video concept roadmap. You approve the direction and receive your 3 fully produced videos free—no credit card required.</p>
+          </div>
+          <div style="margin-bottom:24px;">
+            <h3 style="font-size:18px;margin-bottom:6px;">Can we use these videos for Meta and TikTok paid ads?</h3>
+            <p style="color:#b8c0d4;">Yes. Every client receives 100% full commercial rights to all raw 4K vertical video files for paid advertising (Meta Ads, TikTok Spark Ads, YouTube Shorts) or organic social distribution.</p>
+          </div>
+          <div style="margin-bottom:24px;">
+            <h3 style="font-size:18px;margin-bottom:6px;">Do founders or team members need to record anything?</h3>
+            <p style="color:#b8c0d4;">No. Zero cameras, zero filming, and zero recording software required. All visuals, voiceovers, kinetic captions, and sound design are handled completely by White Mask Content.</p>
+          </div>
+        </section>
+      </main>
+    </div>`;
+  }
+
+  if (routeKey === "pricing") {
+    return `
+    <div id="root">
+      <main style="max-width:1120px;margin:0 auto;padding:48px 20px;font-family:system-ui,-apple-system,sans-serif;color:#f3f5f9;background:#0b1220;line-height:1.6;">
+        <header style="text-align:center;margin-bottom:48px;">
+          <h1 style="font-size:38px;font-weight:800;line-height:1.2;">Transparent AI Video Production Plans for High-Growth Brands</h1>
+          <p style="font-size:18px;color:#7e89a3;max-width:680px;margin:12px auto 0;">From our $0 Free 3 Videos trial to daily-upload scale packages. Zero setup fee, no long-term contracts, cancel anytime.</p>
+        </header>
+        <section style="margin:36px 0;">
+          <h2 style="font-size:24px;margin-bottom:16px;">Video Production Tiers</h2>
+          <ul style="color:#b8c0d4;">
+            <li style="margin-bottom:12px;"><strong>Free 3 Videos ($0):</strong> 3 custom reels (45-60s each), product angle research, delivered in 24h. No credit card required.</li>
+            <li style="margin-bottom:12px;"><strong>Starter ($54/mo):</strong> 26 vertical video ads + 2 long-form walkthroughs per month.</li>
+            <li style="margin-bottom:12px;"><strong>Creator ($86/mo):</strong> 28 vertical video ads + 4 long-form walkthroughs per month.</li>
+            <li style="margin-bottom:12px;"><strong>Growth ($124/mo):</strong> 30 vertical video ads + 6 long-form walkthroughs per month.</li>
+            <li style="margin-bottom:12px;"><strong>Pro ($284/mo):</strong> 30 vertical video ads + 16 long-form walkthroughs per month.</li>
+          </ul>
+        </section>
+      </main>
+    </div>`;
+  }
+
+  return "";
+}
 
 function buildStaticHtml(baseHtml, routeKey, meta, pageData) {
   let html = baseHtml;
@@ -200,6 +282,12 @@ function buildStaticHtml(baseHtml, routeKey, meta, pageData) {
     </div>`;
 
     html = html.replace('<div id="root"></div>', crawlableFallback);
+  } else {
+    // Core routes fallback
+    const fallback = getCoreFallbackHtml(routeKey);
+    if (fallback) {
+      html = html.replace('<div id="root"></div>', fallback);
+    }
   }
 
   return html;
