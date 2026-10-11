@@ -31,6 +31,8 @@
         color: var(--color-paper);
         scroll-behavior: smooth;
         color-scheme: dark;
+        overflow-x: clip;
+        max-width: 100%;
     }
 
     body {
@@ -41,6 +43,11 @@
         text-rendering: optimizeLegibility;
         min-height: 100vh;
         overflow-x: clip;
+        max-width: 100%;
+    }
+
+    button, a, input, select, textarea {
+        touch-action: manipulation;
     }
 
     ::selection {

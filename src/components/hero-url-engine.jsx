@@ -159,24 +159,23 @@ export function HeroUrlEngine({ onClaim, onClaimFree }) {
       <div className="mx-auto max-w-2xl">
         <form
           onSubmit={handleRunAnalysis}
-          className="hairline-highlight relative flex items-center gap-2 rounded-2xl border border-white/10 bg-panel/80 p-2 shadow-2xl backdrop-blur-xl transition-all focus-within:border-signal/50"
+          className="hairline-highlight relative flex flex-col sm:flex-row items-stretch sm:items-center gap-2 rounded-2xl border border-white/10 bg-panel/80 p-2 sm:p-2 shadow-2xl backdrop-blur-xl transition-all focus-within:border-signal/50"
         >
-          <div className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-ink-deep border border-white/5 text-mute">
-            <Globe className="h-4 w-4" />
+          <div className="flex items-center gap-2 flex-1 min-w-0 px-2 py-1 sm:py-0">
+            <Globe className="h-4 w-4 text-mute shrink-0" />
+            <input
+              type="text"
+              value={inputUrl}
+              onChange={(e) => setInputUrl(e.target.value)}
+              placeholder="Enter your website URL (e.g. yourbrand.com)"
+              className="h-10 sm:h-11 w-full bg-transparent text-sm sm:text-base font-medium text-paper placeholder-mute/50 focus:outline-none min-w-0"
+            />
           </div>
-
-          <input
-            type="text"
-            value={inputUrl}
-            onChange={(e) => setInputUrl(e.target.value)}
-            placeholder="Enter your website URL (e.g. yourbrand.com)"
-            className="h-11 w-full bg-transparent px-2 text-sm sm:text-base font-medium text-paper placeholder-mute/50 focus:outline-none"
-          />
 
           <Button
             type="submit"
             disabled={isScanning}
-            className="h-11 px-5 text-sm font-semibold whitespace-nowrap"
+            className="h-11 w-full sm:w-auto px-5 text-sm font-semibold whitespace-nowrap justify-center shrink-0"
           >
             {isScanning ? (
               <span className="flex items-center gap-2">
@@ -193,7 +192,7 @@ export function HeroUrlEngine({ onClaim, onClaimFree }) {
         </form>
 
         {/* Quick brand triggers */}
-        <div className="mt-3 flex flex-wrap items-center justify-center gap-2 text-xs text-mute">
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-mute px-1">
           <span className="font-medium text-paper-dim">Instant test presets:</span>
           {DEMO_PRESETS.map((preset) => (
             <button
@@ -204,7 +203,7 @@ export function HeroUrlEngine({ onClaim, onClaimFree }) {
                 setActivePreset(preset);
                 setSelectedHookIndex(0);
               }}
-              className={`rounded-full border px-3 py-1 text-xs font-medium transition-all ${
+              className={`rounded-full border px-2.5 py-1 text-[11px] sm:text-xs font-medium transition-all ${
                 activePreset.url === preset.url
                   ? "border-signal bg-signal/15 text-paper shadow-sm"
                   : "border-line-subtle bg-panel/30 text-mute hover:border-line hover:text-paper"
@@ -213,7 +212,7 @@ export function HeroUrlEngine({ onClaim, onClaimFree }) {
               {preset.name}
             </button>
           ))}
-          <span className="inline-flex items-center gap-1 text-xs font-semibold text-wave ml-1">
+          <span className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-wave ml-0.5">
             <ShieldCheck className="h-3.5 w-3.5" />
             No card required
           </span>
@@ -279,14 +278,14 @@ export function HeroUrlEngine({ onClaim, onClaimFree }) {
             >
               {/* Left Column: 3 Generated Angles */}
               <div className="space-y-3 lg:col-span-6">
-                <div className="flex items-center justify-between pb-1">
-                  <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-1 pb-1">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
                     <span className="inline-block h-2 w-2 rounded-full bg-wave animate-pulse" />
-                    <span className="text-xs font-bold tracking-wider text-paper uppercase">
-                      3 Video Angles Generated for {activePreset.name}
+                    <span className="text-[11px] sm:text-xs font-bold tracking-wider text-paper uppercase">
+                      3 Video Angles for {activePreset.name}
                     </span>
                   </div>
-                  <span className="text-xs text-mute font-medium">{activePreset.niche}</span>
+                  <span className="text-[11px] sm:text-xs text-mute font-medium">{activePreset.niche}</span>
                 </div>
 
                 {activePreset.hooks.map((hook, idx) => {
@@ -299,43 +298,43 @@ export function HeroUrlEngine({ onClaim, onClaimFree }) {
                         setSelectedHookIndex(idx);
                         setSimulatedProgress(20);
                       }}
-                      className={`hairline-highlight group relative w-full rounded-2xl border p-4 text-left transition-all ${
+                      className={`hairline-highlight group relative w-full rounded-2xl border p-3.5 sm:p-4 text-left transition-all ${
                         isSelected
                           ? "border-signal/80 bg-panel-raised shadow-xl shadow-signal/10 ring-1 ring-signal/30"
                           : "border-line-subtle bg-panel/50 hover:border-line hover:bg-panel/80"
                       }`}
                     >
-                      <div className="flex items-start justify-between gap-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
                         <div className="flex items-center gap-2">
-                          <span className={`inline-flex items-center justify-center rounded-lg px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider ${
+                          <span className={`inline-flex items-center justify-center rounded-lg px-2 py-0.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider ${
                             hook.style === "AI Presenter"
                               ? "bg-amber/15 text-amber border border-amber/30"
                               : "bg-signal/15 text-signal border border-signal/30"
                           }`}>
                             {hook.style}
                           </span>
-                          <span className="text-xs font-mono text-mute">{hook.duration}</span>
+                          <span className="text-[11px] sm:text-xs font-mono text-mute">{hook.duration}</span>
                         </div>
-                        <span className="text-xs font-semibold text-wave">
+                        <span className="text-[11px] sm:text-xs font-semibold text-wave">
                           {hook.retentionScore} retention score
                         </span>
                       </div>
 
-                      <h4 className="mt-2.5 font-display text-base font-bold text-paper group-hover:text-signal transition-colors">
+                      <h4 className="mt-2 font-display text-sm sm:text-base font-bold text-paper group-hover:text-signal transition-colors">
                         "{hook.title}"
                       </h4>
 
-                      <p className="mt-1.5 text-xs leading-relaxed text-mute line-clamp-2">
+                      <p className="mt-1 text-xs leading-relaxed text-mute line-clamp-2">
                         {hook.captionPreview}
                       </p>
 
-                      <div className="mt-3 flex items-center justify-between pt-2 border-t border-line-subtle text-xs text-mute">
-                        <span className="flex items-center gap-1.5">
-                          <Volume2 className="h-3.5 w-3.5 text-signal" />
-                          <span className="truncate max-w-[180px]">{hook.sound}</span>
+                      <div className="mt-2.5 flex items-center justify-between pt-2 border-t border-line-subtle text-[11px] sm:text-xs text-mute gap-2">
+                        <span className="flex items-center gap-1.5 min-w-0">
+                          <Volume2 className="h-3.5 w-3.5 text-signal shrink-0" />
+                          <span className="truncate max-w-[120px] sm:max-w-[180px]">{hook.sound}</span>
                         </span>
-                        <span className="font-semibold text-paper-dim">
-                          {isSelected ? "Now Playing Preview →" : "Click to Preview"}
+                        <span className="font-semibold text-paper-dim shrink-0">
+                          {isSelected ? "Now Playing →" : "Click to Preview"}
                         </span>
                       </div>
                     </button>
@@ -344,19 +343,19 @@ export function HeroUrlEngine({ onClaim, onClaimFree }) {
 
                 {/* Bottom CTA Box */}
                 <div className="pt-2">
-                  <div className="hairline-highlight flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-white/10 bg-panel/70 p-4 shadow-lg backdrop-blur-md">
+                  <div className="hairline-highlight flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 rounded-2xl border border-white/10 bg-panel/70 p-3.5 sm:p-4 shadow-lg backdrop-blur-md">
                     <div>
-                      <p className="text-xs font-bold text-wave uppercase tracking-wider">
+                      <p className="text-[11px] sm:text-xs font-bold text-wave uppercase tracking-wider">
                         Zero Risk • We Revert in 24 Hours
                       </p>
-                      <p className="text-sm font-semibold text-paper">
+                      <p className="text-xs sm:text-sm font-semibold text-paper">
                         Get 3 custom videos for your product. No credit card required.
                       </p>
                     </div>
                     <Button
                       onClick={() => handleClaimTrigger(activePreset.url)}
                       size="sm"
-                      className="whitespace-nowrap h-10 px-5 text-sm font-semibold"
+                      className="whitespace-nowrap h-10 px-5 text-xs sm:text-sm font-semibold w-full sm:w-auto justify-center shrink-0"
                     >
                       Claim 3 Free Videos
                       <ArrowRight className="h-4 w-4 ml-1.5" />
@@ -367,7 +366,7 @@ export function HeroUrlEngine({ onClaim, onClaimFree }) {
 
               {/* Right Column: 9:16 Authentic High-Craft Video Scene */}
               <div className="flex justify-center lg:col-span-6">
-                <div className="relative aspect-[9/16] w-full max-w-[310px] sm:max-w-[330px] overflow-hidden rounded-[32px] border-2 border-white/15 bg-ink-deep shadow-2xl shadow-black">
+                <div className="relative aspect-[9/16] w-full max-w-[280px] xs:max-w-[310px] sm:max-w-[330px] overflow-hidden rounded-[28px] sm:rounded-[32px] border-2 border-white/15 bg-ink-deep shadow-2xl shadow-black">
                   {/* Real Background Video */}
                   {currentHook.videoSrc && (
                     <video
@@ -386,32 +385,32 @@ export function HeroUrlEngine({ onClaim, onClaimFree }) {
                   <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black/85 pointer-events-none" />
 
                   {/* Header Camera Status */}
-                  <div className="absolute top-4 inset-x-4 z-20 flex items-center justify-between text-xs">
-                    <div className="flex items-center gap-1.5 rounded-full bg-black/70 px-2.5 py-1 backdrop-blur-md border border-white/10">
-                      <span className="h-2 w-2 rounded-full bg-coral animate-pulse" />
-                      <span className="font-mono text-xs uppercase tracking-wider text-paper">
+                  <div className="absolute top-3.5 sm:top-4 inset-x-3 sm:inset-x-4 z-20 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-1.5 rounded-full bg-black/70 px-2 sm:px-2.5 py-0.5 sm:py-1 backdrop-blur-md border border-white/10">
+                      <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-coral animate-pulse" />
+                      <span className="font-mono text-[10px] sm:text-xs uppercase tracking-wider text-paper">
                         REC • 4K 60FPS
                       </span>
                     </div>
 
-                    <div className="rounded-full bg-black/70 px-2.5 py-1 font-mono text-xs text-paper-dim backdrop-blur-md border border-white/10">
+                    <div className="rounded-full bg-black/70 px-2 sm:px-2.5 py-0.5 sm:py-1 font-mono text-[10px] sm:text-xs text-paper-dim backdrop-blur-md border border-white/10">
                       {currentHook.style}
                     </div>
                   </div>
 
                   {/* ── REALISTIC PRODUCT UI SCENE ACCORDING TO ACTIVE PRESET ── */}
-                  <div className="absolute inset-0 flex flex-col justify-between p-5 pt-16 pb-20">
+                  <div className="absolute inset-0 flex flex-col justify-between p-3.5 xs:p-4 sm:p-5 pt-14 pb-18 sm:pb-20">
                     {/* Centered subtle floating badge */}
                     <div className="my-auto w-full z-10">
-                      <div className="rounded-2xl border border-white/15 bg-black/75 p-3.5 shadow-2xl backdrop-blur-md text-center max-w-[260px] mx-auto">
+                      <div className="rounded-2xl border border-white/15 bg-black/75 p-3 sm:p-3.5 shadow-2xl backdrop-blur-md text-center max-w-[240px] sm:max-w-[260px] mx-auto">
                         <div className="flex items-center justify-center gap-1.5 pb-1">
                           <span className="h-2 w-2 rounded-full bg-signal" />
-                          <span className="font-semibold text-xs text-paper">{activePreset.name}</span>
-                          <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-mono text-paper-dim">
+                          <span className="font-semibold text-[11px] sm:text-xs text-paper">{activePreset.name}</span>
+                          <span className="rounded bg-white/10 px-1.5 py-0.5 text-[9px] sm:text-[10px] font-mono text-paper-dim">
                             {currentHook.format}
                           </span>
                         </div>
-                        <p className="mt-1 text-xs font-bold text-paper">
+                        <p className="mt-1 text-[11px] sm:text-xs font-bold text-paper line-clamp-2">
                           "{currentHook.title}"
                         </p>
                       </div>
@@ -419,8 +418,8 @@ export function HeroUrlEngine({ onClaim, onClaimFree }) {
 
                     {/* Dynamic High-Impact Subtitles (CapCut / Reels style) */}
                     <div className="text-center pt-2 z-10">
-                      <div className="inline-block rounded-xl bg-black/85 px-3.5 py-1.5 border border-white/15 shadow-xl backdrop-blur-md max-w-[280px]">
-                        <p className="font-display text-xs sm:text-sm font-extrabold uppercase leading-snug tracking-wide text-amber drop-shadow">
+                      <div className="inline-block rounded-xl bg-black/85 px-3 py-1.5 border border-white/15 shadow-xl backdrop-blur-md max-w-[250px] sm:max-w-[280px]">
+                        <p className="font-display text-[11px] xs:text-xs sm:text-sm font-extrabold uppercase leading-snug tracking-wide text-amber drop-shadow">
                           {currentHook.captionPreview}
                         </p>
                       </div>

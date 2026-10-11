@@ -14,8 +14,8 @@ const TOPIC_LINKS = [
 export function Footer() {
   return (
     <footer className="border-t border-line">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 sm:py-12">
+        <div className="flex flex-col gap-8 sm:gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-sm">
             <Link to="/" className="flex items-center gap-2 font-display text-lg font-semibold text-paper">
               <Logo className="h-6 w-6" />
@@ -30,7 +30,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 sm:gap-8">
             <nav aria-label="Footer navigation" className="flex flex-col gap-3">
               <span className="text-xs font-semibold uppercase tracking-wider text-paper-dim">Site</span>
               {NAV_LINKS.map((link) => (

@@ -38,8 +38,8 @@ export function Navbar({ onOpenClaim }) {
   return (
     <>
       {/* ── Top Announcement Bar ── */}
-      <div className="relative z-50 flex items-center justify-center gap-2 border-b border-line-subtle bg-ink-deep/95 px-4 py-2 text-center text-xs text-mute backdrop-blur-md">
-        <span className="flex h-2 w-2 rounded-full bg-wave animate-pulse" />
+      <div className="relative z-50 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 border-b border-line-subtle bg-ink-deep/95 px-3 py-1.5 sm:py-2 text-center text-[11px] sm:text-xs text-mute backdrop-blur-md">
+        <span className="flex h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-wave animate-pulse shrink-0" />
         <span className="font-semibold text-paper">
           Special Founder Access: <strong className="text-wave">First 3 AI videos free</strong> for your product.
         </span>
@@ -47,18 +47,18 @@ export function Navbar({ onOpenClaim }) {
         <button
           type="button"
           onClick={onOpenClaim}
-          className="ml-2 inline-flex items-center gap-1 font-semibold text-signal hover:underline"
+          className="inline-flex items-center gap-1 font-semibold text-signal hover:underline whitespace-nowrap"
         >
           Claim 3 videos <ArrowRight className="h-3 w-3" />
         </button>
       </div>
 
       {/* ── Main Navigation Header ── */}
-      <header className="sticky top-0 z-40 px-4 py-3 sm:px-6">
+      <header className="sticky top-0 z-40 px-3 py-2.5 sm:px-6 sm:py-3">
         <div
           className={`mx-auto flex max-w-6xl items-center justify-between rounded-full transition-all duration-300 ${
             scrolled || mobileMenuOpen
-              ? "glass-panel px-5 py-2.5 shadow-2xl shadow-black/70"
+              ? "glass-panel px-4 py-2 sm:px-5 sm:py-2.5 shadow-2xl shadow-black/70"
               : "border border-transparent bg-transparent px-2 py-2"
           }`}
         >
@@ -133,7 +133,7 @@ export function Navbar({ onOpenClaim }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="glass-panel fixed inset-x-4 top-24 z-50 rounded-3xl p-6 shadow-2xl md:hidden"
+              className="glass-panel fixed inset-x-3 sm:inset-x-4 top-20 sm:top-24 z-50 max-h-[85vh] overflow-y-auto rounded-3xl p-5 sm:p-6 shadow-2xl md:hidden"
             >
               <nav aria-label="Mobile navigation" className="flex flex-col gap-3">
                 <a

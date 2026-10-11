@@ -94,10 +94,10 @@ export function KineticRails() {
       <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-24 bg-gradient-to-b from-ink to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-gradient-to-t from-ink to-transparent" />
 
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-6">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 lg:gap-6">
         {/* Column 1 (Scroll Up) */}
-        <div className="relative h-[660px] overflow-hidden">
-          <div className="animate-rail-up flex flex-col gap-4">
+        <div className="relative h-[520px] sm:h-[660px] overflow-hidden">
+          <div className="animate-rail-up flex flex-col gap-3 sm:gap-4">
             {[...RAIL_CARDS, ...RAIL_CARDS].map((item, idx) => (
               <RailItem key={`c1-${idx}`} item={item} />
             ))}
@@ -105,8 +105,8 @@ export function KineticRails() {
         </div>
 
         {/* Column 2 (Scroll Down) */}
-        <div className="relative h-[660px] overflow-hidden">
-          <div className="animate-rail-down flex flex-col gap-4">
+        <div className="relative h-[520px] sm:h-[660px] overflow-hidden">
+          <div className="animate-rail-down flex flex-col gap-3 sm:gap-4">
             {[...RAIL_CARDS.slice().reverse(), ...RAIL_CARDS].map((item, idx) => (
               <RailItem key={`c2-${idx}`} item={item} />
             ))}
@@ -137,7 +137,7 @@ export function KineticRails() {
 
 function RailItem({ item }) {
   return (
-    <div className="hairline-highlight relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/90 p-4 shadow-xl flex flex-col justify-between">
+    <div className="hairline-highlight relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/90 p-2.5 sm:p-4 shadow-xl flex flex-col justify-between">
       {/* Background Video */}
       {item.videoSrc && (
         <video
@@ -156,62 +156,62 @@ function RailItem({ item }) {
 
       {/* Top Header */}
       <div className="relative z-10">
-        <div className="flex items-center justify-between text-xs">
-          <span className="rounded-full bg-black/70 px-2.5 py-0.5 font-semibold text-paper-dim border border-white/10 backdrop-blur-md">
+        <div className="flex items-center justify-between gap-1 text-[10px] sm:text-xs">
+          <span className="truncate max-w-[70px] sm:max-w-none rounded-full bg-black/70 px-2 py-0.5 font-semibold text-paper-dim border border-white/10 backdrop-blur-md">
             {item.niche}
           </span>
-          <span className={`rounded-full bg-black/70 px-2 py-0.5 font-bold uppercase tracking-wider text-xs border ${item.accent} backdrop-blur-md`}>
+          <span className={`shrink-0 rounded-full bg-black/70 px-1.5 sm:px-2 py-0.5 font-bold uppercase tracking-wider text-[9px] sm:text-xs border ${item.accent} backdrop-blur-md`}>
             {item.badge}
           </span>
         </div>
 
         {/* Creator identity */}
-        <div className="mt-2 flex items-center gap-1.5 text-xs text-mute">
-          <span className="h-1.5 w-1.5 rounded-full bg-wave animate-pulse" />
-          <span className="font-semibold text-paper drop-shadow">{item.handle}</span>
-          <CheckCircle2 className="h-3 w-3 text-signal" />
+        <div className="mt-1.5 sm:mt-2 flex items-center gap-1.5 text-[10px] sm:text-xs text-mute min-w-0">
+          <span className="h-1.5 w-1.5 rounded-full bg-wave animate-pulse shrink-0" />
+          <span className="font-semibold text-paper drop-shadow truncate">{item.handle}</span>
+          <CheckCircle2 className="h-3 w-3 text-signal shrink-0" />
         </div>
       </div>
 
       {/* Middle: Sleek floating metric badge */}
-      <div className="relative z-10 my-auto rounded-xl border border-white/15 bg-black/75 p-3 shadow-2xl backdrop-blur-md">
-        <div className="flex items-center justify-between text-xs text-mute pb-1.5 border-b border-white/10">
-          <span className="font-mono text-paper-dim">{item.mockData.label}</span>
-          <span className="rounded bg-white/15 px-1 py-0.5 text-xs font-bold text-wave">
+      <div className="relative z-10 my-auto rounded-xl border border-white/15 bg-black/75 p-2 sm:p-3 shadow-2xl backdrop-blur-md">
+        <div className="flex items-center justify-between text-[10px] sm:text-xs text-mute pb-1 sm:pb-1.5 border-b border-white/10 gap-1">
+          <span className="font-mono text-paper-dim truncate max-w-[75px] sm:max-w-none">{item.mockData.label}</span>
+          <span className="rounded bg-white/15 px-1 py-0.5 text-[9px] sm:text-xs font-bold text-wave shrink-0">
             {item.mockData.tag}
           </span>
         </div>
 
-        <div className="mt-2 flex items-center justify-between">
-          <span className="font-display text-sm font-bold text-paper">
+        <div className="mt-1.5 sm:mt-2 flex items-center justify-between gap-1">
+          <span className="font-display text-xs sm:text-sm font-bold text-paper truncate">
             {item.mockData.metric}
           </span>
-          <span className="rounded-full bg-signal/25 px-2 py-0.5 text-xs font-semibold text-signal border border-signal/30">
+          <span className="rounded-full bg-signal/25 px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-xs font-semibold text-signal border border-signal/30 shrink-0 truncate max-w-[75px] sm:max-w-none">
             {item.highlightWord}
           </span>
         </div>
 
-        <p className="mt-2 text-xs font-medium text-paper line-clamp-2 leading-relaxed">
+        <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-xs font-medium text-paper line-clamp-2 leading-tight sm:leading-relaxed">
           "{item.title}"
         </p>
       </div>
 
       {/* Bottom: Kinetic Captions & Telemetry */}
-      <div className="relative z-10 space-y-2 pt-1">
-        <div className="rounded-lg bg-black/85 px-2.5 py-1.5 border border-white/10 backdrop-blur-md">
-          <p className="line-clamp-2 text-xs font-bold text-amber">
+      <div className="relative z-10 space-y-1.5 sm:space-y-2 pt-1">
+        <div className="rounded-lg bg-black/85 px-2 sm:px-2.5 py-1 sm:py-1.5 border border-white/10 backdrop-blur-md">
+          <p className="line-clamp-2 text-[10px] sm:text-xs font-bold text-amber leading-tight">
             {item.caption}
           </p>
         </div>
 
-        <div className="flex items-center justify-between border-t border-white/10 pt-2 text-xs text-mute">
+        <div className="flex items-center justify-between border-t border-white/10 pt-1.5 sm:pt-2 text-[10px] sm:text-xs text-mute">
           <span className="flex items-center gap-1 font-mono">
-            <Eye className="h-3.5 w-3.5 text-signal" />
+            <Eye className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-signal" />
             <span className="text-paper-dim">{item.views}</span>
           </span>
 
           <span className="flex items-center gap-1 font-mono">
-            <Heart className="h-3.5 w-3.5 text-coral fill-coral/50" />
+            <Heart className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-coral fill-coral/50" />
             <span className="text-paper-dim">{item.likes}</span>
           </span>
         </div>

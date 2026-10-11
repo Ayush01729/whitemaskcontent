@@ -124,34 +124,34 @@ export function Home() {
         <section className="relative px-4 pt-4 pb-20 sm:px-6 sm:pt-6 lg:pt-8">
           <div className="mx-auto max-w-5xl text-center">
             {/* Trust badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-signal/30 bg-signal/10 px-4 py-1.5 text-xs font-semibold text-signal shadow-sm">
-              <Sparkles className="h-3.5 w-3.5" />
-              <span>AI Video Studio for Startups & Brands • First 3 Videos Free</span>
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-signal/30 bg-signal/10 px-3 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold text-signal shadow-sm max-w-full">
+              <Sparkles className="h-3.5 w-3.5 shrink-0" />
+              <span>AI Video Studio for Brands • First 3 Videos Free</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="mt-6 font-display text-4xl font-extrabold tracking-tight text-paper sm:text-6xl lg:text-7xl text-balance">
+            <h1 className="mt-5 sm:mt-6 font-display text-3xl font-extrabold tracking-tight text-paper xs:text-4xl sm:text-6xl lg:text-7xl text-balance">
               Video ads and product demos for high-growth brands. Zero camera days.
             </h1>
 
             {/* Subtitle */}
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-mute sm:text-lg text-balance">
+            <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-sm leading-relaxed text-mute sm:text-lg text-balance">
               We produce high-converting AI videos for your product — zero cameras or filming required. Just drop your website link so we can learn what you build, and we'll revert within 24 hours with your first 3 custom videos free.
             </p>
 
             {/* Hero Interactive URL Engine */}
-            <div className="mt-10">
+            <div className="mt-8 sm:mt-10">
               <HeroUrlEngine onClaim={(url) => openClaimModal(url)} />
             </div>
 
             {/* Proof Metric Strip */}
-            <div className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-4 border-t border-line-subtle pt-8 sm:grid-cols-4">
+            <div className="mx-auto mt-12 sm:mt-16 grid max-w-4xl grid-cols-2 gap-3 sm:gap-4 border-t border-line-subtle pt-6 sm:pt-8 sm:grid-cols-4">
               {PROOF_POINTS.map((pt) => (
-                <div key={pt.label} className="text-left sm:text-center">
-                  <div className="font-display text-2xl font-extrabold text-paper sm:text-3xl">
+                <div key={pt.label} className="text-left sm:text-center p-1 sm:p-0">
+                  <div className="font-display text-xl font-extrabold text-paper sm:text-3xl">
                     {pt.value}
                   </div>
-                  <div className="mt-1 text-xs text-mute leading-tight">
+                  <div className="mt-1 text-[11px] sm:text-xs text-mute leading-snug sm:leading-tight">
                     {pt.label}
                   </div>
                 </div>
@@ -418,15 +418,15 @@ export function Home() {
               </Button>
             </form>
 
-            <div className="mt-4 flex items-center justify-center gap-4 text-xs text-mute">
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-[11px] sm:text-xs text-mute">
               <span className="inline-flex items-center gap-1">
-                <Check className="h-3.5 w-3.5 text-wave" /> Zero card required
+                <Check className="h-3.5 w-3.5 text-wave shrink-0" /> Zero card required
               </span>
               <span className="inline-flex items-center gap-1">
-                <Check className="h-3.5 w-3.5 text-wave" /> We revert in 24 hours
+                <Check className="h-3.5 w-3.5 text-wave shrink-0" /> We revert in 24 hours
               </span>
               <span className="inline-flex items-center gap-1">
-                <Check className="h-3.5 w-3.5 text-wave" /> 100% commercial rights
+                <Check className="h-3.5 w-3.5 text-wave shrink-0" /> 100% commercial rights
               </span>
             </div>
           </div>

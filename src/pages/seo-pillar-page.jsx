@@ -90,11 +90,11 @@ export function SEOPillarPage({ fixedSlug }) {
       />
 
       {/* ── Breadcrumb & Hero Header ─────────────────────────── */}
-      <section className="relative overflow-hidden px-6 pt-32 pb-16 lg:pt-36 lg:pb-20">
+      <section className="relative overflow-hidden px-4 sm:px-6 pt-28 sm:pt-32 pb-14 sm:pb-16 lg:pt-36 lg:pb-20">
         <div className="mx-auto max-w-4xl">
           {/* Breadcrumb nav */}
           <Reveal>
-            <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-xs text-mute">
+            <nav aria-label="Breadcrumb" className="mb-5 sm:mb-6 flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs text-mute">
               <Link to="/" className="transition-colors hover:text-paper">
                 Home
               </Link>
@@ -109,8 +109,8 @@ export function SEOPillarPage({ fixedSlug }) {
 
           {/* Badge & Meta */}
           <Reveal delay={0.05}>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-wave/30 bg-wave/10 px-3 py-1 text-xs font-medium text-wave">
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-wave/30 bg-wave/10 px-2.5 sm:px-3 py-0.5 sm:py-1 text-xs font-medium text-wave">
                 <Sparkles className="h-3 w-3" />
                 {pageData.eyebrow}
               </span>
@@ -127,7 +127,7 @@ export function SEOPillarPage({ fixedSlug }) {
 
           {/* Main H1 */}
           <Reveal delay={0.1}>
-            <h1 className="mt-5 font-display text-3xl font-semibold leading-tight text-balance text-paper sm:text-4xl lg:text-[2.75rem]">
+            <h1 className="mt-4 sm:mt-5 font-display text-2xl font-semibold leading-tight text-balance text-paper sm:text-4xl lg:text-[2.75rem]">
               {pageData.h1}
             </h1>
           </Reveal>
@@ -174,13 +174,13 @@ export function SEOPillarPage({ fixedSlug }) {
 
       {/* ── Table of Contents & Quick Navigation ──────────────── */}
       {pageData.tableOfContents && (
-        <section className="border-y border-line bg-panel/40 px-6 py-8">
+        <section className="border-y border-line bg-panel/40 px-4 sm:px-6 py-6 sm:py-8">
           <div className="mx-auto max-w-4xl">
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-mute">
               <Layers className="h-3.5 w-3.5 text-signal" />
               In this guide
             </div>
-            <nav className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+            <nav className="mt-4 grid grid-cols-1 gap-2 sm:gap-2.5 sm:grid-cols-2">
               {pageData.tableOfContents.map((item, idx) => (
                 <a
                   key={item.id}
@@ -199,7 +199,7 @@ export function SEOPillarPage({ fixedSlug }) {
       )}
 
       {/* ── Main Article Sections ─────────────────────────────── */}
-      <article className="px-6 py-16 lg:py-20">
+      <article className="px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-4xl space-y-16">
           {pageData.sections.map((section, idx) => (
             <section
@@ -233,7 +233,7 @@ export function SEOPillarPage({ fixedSlug }) {
               {/* Comparison Table if present */}
               {section.comparisonTable && (
                 <Reveal delay={0.1} className="mt-8 overflow-x-auto rounded-xl border border-line bg-panel">
-                  <table className="w-full text-left text-sm">
+                  <table className="w-full min-w-[500px] text-left text-sm">
                     <thead className="border-b border-line bg-panel-raised/60 text-xs text-paper-dim uppercase tracking-wider">
                       <tr>
                         {section.comparisonTable.headers.map((h, hIdx) => (
@@ -296,8 +296,8 @@ export function SEOPillarPage({ fixedSlug }) {
       </article>
 
       {/* ── Mid-Article Conversion Callout ─────────────────────── */}
-      <section className="px-6 py-8">
-        <div className="mx-auto max-w-4xl rounded-2xl border border-line bg-gradient-to-br from-panel-raised to-panel p-8 sm:p-10">
+      <section className="px-4 sm:px-6 py-8">
+        <div className="mx-auto max-w-4xl rounded-2xl border border-line bg-gradient-to-br from-panel-raised to-panel p-5 sm:p-10">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="max-w-xl">
               <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-wave uppercase tracking-wider">
@@ -327,9 +327,9 @@ export function SEOPillarPage({ fixedSlug }) {
       </section>
 
       {/* ── Guarantees Strip ──────────────────────────────────── */}
-      <section className="px-6 py-12">
+      <section className="px-4 sm:px-6 py-10 sm:py-12">
         <div className="mx-auto max-w-4xl">
-          <Stagger className="grid grid-cols-2 gap-4 sm:grid-cols-5">
+          <Stagger className="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-5">
             {GUARANTEES.map((g) => (
               <StaggerItem
                 key={g.label}
@@ -344,7 +344,7 @@ export function SEOPillarPage({ fixedSlug }) {
       </section>
 
       {/* ── FAQ Section (Indexed via FAQPage Schema) ───────────── */}
-      <section className="border-t border-line px-6 py-16 lg:py-20">
+      <section className="border-t border-line px-4 sm:px-6 py-14 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-4xl">
           <Reveal>
             <span className="text-xs font-semibold uppercase tracking-wider text-wave">
@@ -394,7 +394,7 @@ export function SEOPillarPage({ fixedSlug }) {
 
       {/* ── Topic Cluster Cross-Linking ───────────────────────── */}
       {relatedPages.length > 0 && (
-        <section className="border-t border-line bg-panel/20 px-6 py-16">
+        <section className="border-t border-line bg-panel/20 px-4 sm:px-6 py-14 sm:py-16">
           <div className="mx-auto max-w-4xl">
             <Reveal>
               <div className="flex items-center justify-between">
@@ -444,7 +444,7 @@ export function SEOPillarPage({ fixedSlug }) {
       )}
 
       {/* ── Final Conversion CTA ──────────────────────────────── */}
-      <section className="px-6 py-20">
+      <section className="px-4 sm:px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
             <h2 className="font-display text-3xl font-semibold text-paper sm:text-4xl">

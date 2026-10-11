@@ -21,30 +21,30 @@ export function WhatYouGet() {
         path="/what-you-get"
         schema={BREADCRUMB}
       />
-      <section className="px-6 pt-36 pb-16">
+      <section className="px-4 sm:px-6 pt-28 sm:pt-36 pb-12 sm:pb-16">
         <div className="mx-auto max-w-3xl">
           <Reveal delay={0.08}>
-            <h1 className="font-display text-4xl font-semibold leading-tight text-balance text-paper sm:text-5xl">
+            <h1 className="font-display text-3xl font-semibold leading-tight text-balance text-paper sm:text-5xl">
               Everything your product videos need. Zero filming on your part.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-5 text-base leading-relaxed text-mute">
+            <p className="mt-4 sm:mt-5 text-sm sm:text-base leading-relaxed text-mute">
               Drop your product link. We extract core features, write high-converting scripts, build kinetic UI graphics and AI brand presenters, and export for ads and organic reach. None of it touches your calendar.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="px-6 py-10">
+      <section className="px-4 sm:px-6 py-10">
         <div className="mx-auto max-w-4xl">
           {DELIVERABLES.map((d, i) => (
             <Reveal key={d.step} delay={i * 0.05}>
-              <div className="flex gap-6 border-t border-line py-8 first:border-t-0 sm:gap-10">
-                <span className="font-display text-sm text-signal">{d.step}</span>
+              <div className="flex gap-4 sm:gap-10 border-t border-line py-6 sm:py-8 first:border-t-0">
+                <span className="font-display text-xs sm:text-sm text-signal shrink-0">{d.step}</span>
                 <div>
-                  <h3 className="font-display text-xl font-semibold text-paper">{d.title}</h3>
-                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-mute">{d.body}</p>
+                  <h3 className="font-display text-lg sm:text-xl font-semibold text-paper">{d.title}</h3>
+                  <p className="mt-1.5 sm:mt-2 max-w-xl text-xs sm:text-sm leading-relaxed text-mute">{d.body}</p>
                 </div>
               </div>
             </Reveal>
@@ -52,48 +52,48 @@ export function WhatYouGet() {
         </div>
       </section>
 
-      <section className="border-y border-line px-6 py-16">
+      <section className="border-y border-line px-4 sm:px-6 py-16">
         <div className="mx-auto max-w-4xl">
           <Reveal>
-            <h2 className="font-display text-2xl font-semibold text-paper">Wherever your audience watches.</h2>
+            <h2 className="font-display text-xl sm:text-2xl font-semibold text-paper">Wherever your audience watches.</h2>
           </Reveal>
-          <Stagger className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <Stagger className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-4">
             {PLATFORMS.map((p) => (
-              <StaggerItem key={p} className="rounded-xl border border-line bg-panel px-4 py-5 text-center">
-                <span className="text-sm text-paper-dim">{p}</span>
+              <StaggerItem key={p} className="rounded-xl border border-line bg-panel px-3 sm:px-4 py-4 sm:py-5 text-center">
+                <span className="text-xs sm:text-sm text-paper-dim">{p}</span>
               </StaggerItem>
             ))}
           </Stagger>
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-4 sm:px-6 py-20">
         <div className="mx-auto max-w-4xl">
           <Reveal>
-            <h2 className="font-display text-2xl font-semibold text-paper">16+ features, included on every plan.</h2>
+            <h2 className="font-display text-xl sm:text-2xl font-semibold text-paper">16+ features, included on every plan.</h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mt-2 max-w-lg text-sm text-mute">
+            <p className="mt-2 max-w-lg text-xs sm:text-sm text-mute">
               The volume changes between tiers. The production standard doesn't.
             </p>
           </Reveal>
-          <Stagger className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <Stagger className="mt-8 grid grid-cols-1 gap-2.5 sm:gap-3 sm:grid-cols-2">
             {FEATURES.map((f) => (
-              <StaggerItem key={f} className="flex items-center gap-2.5 rounded-xl border border-line bg-panel px-4 py-3">
+              <StaggerItem key={f} className="flex items-center gap-2.5 rounded-xl border border-line bg-panel px-3.5 sm:px-4 py-2.5 sm:py-3">
                 <Check className="h-4 w-4 shrink-0 text-wave" />
-                <span className="text-sm text-paper-dim">{f}</span>
+                <span className="text-xs sm:text-sm text-paper-dim">{f}</span>
               </StaggerItem>
             ))}
           </Stagger>
         </div>
       </section>
 
-      <section className="border-t border-line px-6 py-20">
+      <section className="border-t border-line px-4 sm:px-6 py-20">
         <div className="mx-auto max-w-4xl">
           <Reveal>
-            <h2 className="font-display text-2xl font-semibold text-paper">Across high-growth verticals, with the same guarantees.</h2>
+            <h2 className="font-display text-xl sm:text-2xl font-semibold text-paper">Across high-growth verticals, with the same guarantees.</h2>
           </Reveal>
-          <Stagger className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+          <Stagger className="mt-8 grid grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-3 lg:grid-cols-5">
             {GUARANTEES.map((g) => (
               <StaggerItem key={g.label}>
                 <GuaranteeValue guarantee={g} />

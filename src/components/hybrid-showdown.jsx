@@ -46,46 +46,46 @@ export function HybridShowdown({ onClaim }) {
   const current = comparisonData[activeTab];
 
   return (
-    <div className="hairline-highlight mx-auto max-w-5xl rounded-3xl border border-white/10 bg-panel/75 p-6 shadow-2xl backdrop-blur-xl sm:p-10">
+    <div className="hairline-highlight mx-auto max-w-5xl rounded-3xl border border-white/10 bg-panel/75 p-4 sm:p-10 shadow-2xl backdrop-blur-xl">
       <div className="flex flex-col items-center justify-between gap-6 border-b border-line-subtle pb-8 md:flex-row">
         <div>
           <span className="inline-flex items-center gap-1.5 rounded-full border border-signal/30 bg-signal/10 px-3 py-1 text-xs font-semibold text-signal">
             <Sparkles className="h-3.5 w-3.5" />
             The Hybrid Studio Superpower
           </span>
-          <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-paper sm:text-3xl">
+          <h3 className="mt-3 font-display text-xl sm:text-3xl font-bold tracking-tight text-paper text-balance">
             Why choose between UI demos and brand presenters? You get both.
           </h3>
-          <p className="mt-2 max-w-xl text-sm leading-relaxed text-mute">
+          <p className="mt-2 max-w-xl text-xs sm:text-sm leading-relaxed text-mute">
             Most video agencies force you into a single rigid style. White Mask Content produces both formats from your website link so you can test which ad hooks convert best.
           </p>
         </div>
 
         {/* Style Switcher */}
-        <div className="flex rounded-2xl border border-white/10 bg-ink-deep p-1.5 shadow-inner">
+        <div className="w-full sm:w-auto grid grid-cols-2 sm:flex rounded-2xl border border-white/10 bg-ink-deep p-1.5 shadow-inner">
           <button
             type="button"
             onClick={() => setActiveTab("kinetic")}
-            className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold transition-all ${
+            className={`flex items-center justify-center gap-1.5 sm:gap-2 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 text-xs font-bold transition-all ${
               activeTab === "kinetic"
                 ? "bg-signal text-white shadow-lg shadow-signal/30"
                 : "text-mute hover:text-paper"
             }`}
           >
-            <Monitor className="h-3.5 w-3.5" />
-            Kinetic UI Cuts
+            <Monitor className="h-3.5 w-3.5 shrink-0" />
+            <span>Kinetic UI Cuts</span>
           </button>
           <button
             type="button"
             onClick={() => setActiveTab("presenter")}
-            className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold transition-all ${
+            className={`flex items-center justify-center gap-1.5 sm:gap-2 rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 text-xs font-bold transition-all ${
               activeTab === "presenter"
                 ? "bg-amber text-ink-deep font-extrabold shadow-lg shadow-amber/30"
                 : "text-mute hover:text-paper"
             }`}
           >
-            <UserCheck className="h-3.5 w-3.5" />
-            AI Presenters
+            <UserCheck className="h-3.5 w-3.5 shrink-0" />
+            <span>AI Presenters</span>
           </button>
         </div>
       </div>
@@ -107,10 +107,10 @@ export function HybridShowdown({ onClaim }) {
                 {current.badge}
               </span>
             </div>
-            <h4 className="font-display text-2xl font-bold text-paper">
+            <h4 className="font-display text-xl sm:text-2xl font-bold text-paper">
               {current.title}
             </h4>
-            <p className="text-sm leading-relaxed text-mute">
+            <p className="text-xs sm:text-sm leading-relaxed text-mute">
               {current.desc}
             </p>
 
@@ -126,7 +126,7 @@ export function HybridShowdown({ onClaim }) {
             </ul>
 
             <div className="pt-4">
-              <Button onClick={() => onClaim()} size="sm" className="h-10 px-5 text-xs font-semibold">
+              <Button onClick={() => onClaim()} size="sm" className="h-10 px-5 text-xs font-semibold w-full sm:w-auto justify-center">
                 Test this style in your 3 free videos
                 <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
               </Button>
@@ -135,7 +135,7 @@ export function HybridShowdown({ onClaim }) {
 
           {/* Interactive Screen Preview Frame */}
           <div className="flex justify-center lg:col-span-5">
-            <div className="hairline-highlight relative aspect-[9/16] w-full max-w-[280px] overflow-hidden rounded-3xl border border-white/15 bg-ink-deep shadow-2xl flex flex-col justify-between">
+            <div className="hairline-highlight relative aspect-[9/16] w-full max-w-[270px] sm:max-w-[280px] overflow-hidden rounded-3xl border border-white/15 bg-ink-deep shadow-2xl flex flex-col justify-between">
               {/* Background Video */}
               <video
                 key={activeTab}

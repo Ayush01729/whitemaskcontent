@@ -112,12 +112,12 @@ export function ClaimFreeDrawer({ isOpen, onClose, initialUrl = "" }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 16 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-panel relative w-full max-w-lg rounded-3xl p-6 sm:p-8"
+            className="glass-panel relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-3xl p-5 sm:p-8"
           >
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-5 right-5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-line-subtle bg-panel/60 text-mute transition-colors hover:bg-panel hover:text-paper"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-line-subtle bg-panel/60 text-mute transition-colors hover:bg-panel hover:text-paper"
               aria-label="Close modal"
             >
               <X className="h-4 w-4" />
@@ -216,11 +216,11 @@ export function ClaimFreeDrawer({ isOpen, onClose, initialUrl = "" }) {
                     <label className="block text-xs font-semibold text-paper-dim mb-1.5">
                       Video style preference
                     </label>
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
                       <button
                         type="button"
                         onClick={() => setFormatPreference("hybrid")}
-                        className={`rounded-xl border p-2.5 text-center text-xs font-semibold transition-all ${
+                        className={`rounded-xl border p-2 sm:p-2.5 text-center text-[11px] sm:text-xs font-semibold transition-all ${
                           formatPreference === "hybrid"
                             ? "border-signal bg-signal/15 text-paper"
                             : "border-line-subtle bg-panel/30 text-mute hover:border-line hover:text-paper"
@@ -231,7 +231,7 @@ export function ClaimFreeDrawer({ isOpen, onClose, initialUrl = "" }) {
                       <button
                         type="button"
                         onClick={() => setFormatPreference("faceless")}
-                        className={`rounded-xl border p-2.5 text-center text-xs font-semibold transition-all ${
+                        className={`rounded-xl border p-2 sm:p-2.5 text-center text-[11px] sm:text-xs font-semibold transition-all ${
                           formatPreference === "faceless"
                             ? "border-signal bg-signal/15 text-paper"
                             : "border-line-subtle bg-panel/30 text-mute hover:border-line hover:text-paper"
@@ -242,7 +242,7 @@ export function ClaimFreeDrawer({ isOpen, onClose, initialUrl = "" }) {
                       <button
                         type="button"
                         onClick={() => setFormatPreference("creator")}
-                        className={`rounded-xl border p-2.5 text-center text-xs font-semibold transition-all ${
+                        className={`rounded-xl border p-2 sm:p-2.5 text-center text-[11px] sm:text-xs font-semibold transition-all ${
                           formatPreference === "creator"
                             ? "border-signal bg-signal/15 text-paper"
                             : "border-line-subtle bg-panel/30 text-mute hover:border-line hover:text-paper"
@@ -261,7 +261,7 @@ export function ClaimFreeDrawer({ isOpen, onClose, initialUrl = "" }) {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full h-12 text-base font-semibold"
+                      className="w-full h-11 sm:h-12 text-sm sm:text-base font-semibold"
                     >
                       {isSubmitting ? (
                         "Researching brand..."

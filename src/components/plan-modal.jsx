@@ -112,12 +112,12 @@ export function PlanModal() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 16 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 w-full max-w-lg overflow-hidden rounded-3xl border border-line bg-panel-raised p-6 shadow-2xl sm:p-8"
+            className="relative z-10 w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-3xl border border-line bg-panel-raised p-5 sm:p-8 shadow-2xl"
           >
             {/* Close Button */}
             <button
               onClick={closePlanModal}
-              className="absolute right-5 top-5 rounded-full p-2 text-mute transition-colors hover:bg-line/40 hover:text-paper"
+              className="absolute right-4 top-4 sm:right-5 sm:top-5 rounded-full p-2 text-mute transition-colors hover:bg-line/40 hover:text-paper"
               aria-label="Close dialog"
             >
               <X className="h-5 w-5" />
